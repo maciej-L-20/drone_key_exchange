@@ -14,7 +14,7 @@ public class SimulationOfDH {
         String keyInMes1 = (String.format("%8s", Integer.toBinaryString(keyToSendByDrone))).replaceAll(" ", "0");
         String drone1ID = (String.format("%8s", Integer.toBinaryString(drone1.getDroneID()))).replaceAll(" ", "0");
         String message1 = drone1ID + keyInMes1;
-        System.out.println("Message 1 from drone to CC: " + message1);
+        System.out.println("Message 1 - from drone to CC: " + message1);
 
         //Control center generates its key to send it to the drone and computes the final key.
         int receivedDroneID = Integer.parseInt(message1.substring(0, 8), 2);
@@ -28,7 +28,7 @@ public class SimulationOfDH {
 
         //Message 2 - control center sends to drone its key;
         String message2 = (String.format("%8s", Integer.toBinaryString(keyToBeSendByCC))).replaceAll(" ", "0");
-        System.out.println("Message 2 - from CC to the Drone: "+message2);
+        System.out.println("Message 2 - from CC to the Drone: "+ message2);
 
         //Drone calculates its finalKey
         int receivedKeyByDrone = Integer.parseInt(message2, 2);

@@ -23,14 +23,13 @@ public class SimulationOfElG {
         int plaintext = drone1.getDroneID(); // plaintext message
         int c2 = (DataOperations.modPower(e2, r, p) * plaintext) % p; // second part of ciphertext
         String message1 = String.format("%8s", Integer.toBinaryString(c1)).replaceAll(" ", "0") + String.format("%8s", Integer.toBinaryString(c2)).replaceAll(" ", "0");
-        System.out.println("Message 1 from drone to CC: " + message1);
+        System.out.println("Message 1 - from drone to CC: " + message1);
 
         //Control center decrypts the message and sends a response.
         int receivedC1 = Integer.parseInt(message1.substring(0, 8), 2);
         int receivedC2 = Integer.parseInt(message1.substring(8, 16), 2);
-        int receivedPlaintext = DataOperations.modPower(receivedC1, p - 1 - privateKey, p) * receivedC2 % p; // decryption of plaintext
-        int response = receivedPlaintext; // response message
-        int r2 = (int) (Math.random() * (p - 2)) + 1; // random number r2
+        int response = DataOperations.modPower(receivedC1, p - 1 - privateKey, p) * receivedC2 % p; // response message
+        int r2 = (int) (Math.random() * (p - 2)) + 1;
         int c1Response = DataOperations.modPower(e1, r2, p); // first part of response ciphertext
         int c2Response = (DataOperations.modPower(publicKey[1], r2, publicKey[2]) * response) % publicKey[2]; // second part of response ciphertext
         String message2 = String.format("%8s", Integer.toBinaryString(c1Response)).replaceAll(" ", "0") + String.format("%8s", Integer.toBinaryString(c2Response)).replaceAll(" ", "0");
@@ -40,7 +39,6 @@ public class SimulationOfElG {
         int receivedC1Response = Integer.parseInt(message2.substring(0, 8), 2);
         int receivedC2Response = Integer.parseInt(message2.substring(8, 16), 2);
         int receivedResponse = DataOperations.modPower(receivedC1Response, p - 1 - privateKey, p) * receivedC2Response % p; // decryption of response
-        System.out.println("Received response: " + receivedResponse);
     }
 
 }
