@@ -2,20 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataOperations {
-    public static long keyToBeExchanged(Data data, int selected) {
-        int P = data.getP();
-        int G = data.getG();
-        long key = (long) (Math.pow(G, selected) % P);
-        return key;
-    }
-
-    public static long SecretKey(long x, int b, int P) {
-        long secretKey = (long) (Math.pow(x, b) % P);
-        return secretKey;
-    }
 
     public static int modPower(int base, int exponent, int modulus) {
-        int res = 1; // Initialize result
+        int result = 1; // Initialize resultult
 
         base = base % modulus; // Update x if it is more than or
         // equal to p
@@ -25,15 +14,15 @@ public class DataOperations {
 
         while (exponent > 0) {
 
-            // If y is odd, multiply x with result
+            // If y is odd, multiply x with resultult
             if ((exponent & 1) != 0)
-                res = (res * base) % modulus;
+                result = (result * base) % modulus;
 
             // y must be even now
             exponent = exponent >> 1; // y = y/2
             base = (base * base) % modulus;
         }
-        return res;
+        return result;
     }
 
     public static int findPrimitiveRoot(int p) {
