@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataOperations {
     public static long keyToBeExchanged(Data data, int selected) {
         int P = data.getP();
@@ -31,5 +34,59 @@ public class DataOperations {
             base = (base * base) % modulus;
         }
         return res;
+    }
+
+    public static int findPrimitiveRoot(int p) {
+
+        // Find the totient of p
+        int phi = p - 1;
+
+        // Find the prime factors of phi
+        List<Integer> factors = primeFactors(phi);
+
+        // Check every integer from 2 to p-1
+        for (int g = 2; g <= p-1; g++) {
+            boolean isPrimitiveRoot = true;
+
+            // Check if g is a generator of the multiplicative group of integers modulo p
+            for (int factor : factors) {
+                int exp = phi / factor;
+                int result = modPower(g, exp, p);
+
+                if (result == 1) {
+                    isPrimitiveRoot = false;
+                    break;
+                }
+            }
+
+            // If g is a primitive root, return it
+            if (isPrimitiveRoot) {
+                return g;
+            }
+        }
+
+        // No primitive root found
+        throw new IllegalArgumentException("No primitive root found for p");
+    }
+
+    public static List<Integer> primeFactors(int n) {
+        List<Integer> factors = new ArrayList<>();
+
+        for (int i = 2; i <= n/i; i++) {
+            while (n % i == 0) {
+                factors.add(i);
+                n /= i;
+            }
+        }
+
+        if (n > 1) {
+            factors.add(n);
+        }
+
+        return factors;
+    }
+
+    public static int getRandomFromRange(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
