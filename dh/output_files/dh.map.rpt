@@ -1,5 +1,5 @@
 Analysis & Synthesis report for dh
-Sun May 14 21:10:30 2023
+Sun May 14 22:25:21 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -19,16 +19,16 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  11. User-Specified and Inferred Latches
  12. Registers Removed During Synthesis
  13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |drone
- 16. Parameter Settings for User Entity Instance: modularPowering:modularPowering_inst
- 17. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_mult:Mult0
- 18. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod1
- 19. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod0
- 20. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_mult:Mult1
- 21. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod2
- 22. lpm_mult Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "modularPowering:modularPowering_inst"
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |drone
+ 17. Parameter Settings for User Entity Instance: modularPowering:modularPowering_inst
+ 18. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_mult:Mult0
+ 19. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod1
+ 20. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod0
+ 21. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_mult:Mult1
+ 22. Parameter Settings for Inferred Entity Instance: modularPowering:modularPowering_inst|lpm_divide:Mod2
+ 23. lpm_mult Parameter Settings by Entity Instance
  24. Post-Synthesis Netlist Statistics for Top Partition
  25. Elapsed Time Per Partition
  26. Analysis & Synthesis Messages
@@ -59,15 +59,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 14 21:10:30 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sun May 14 22:25:21 2023       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; dh                                          ;
 ; Top-level Entity Name              ; drone                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 539                                         ;
-;     Total combinational functions  ; 539                                         ;
-;     Dedicated logic registers      ; 31                                          ;
-; Total registers                    ; 31                                          ;
+; Total logic elements               ; 561                                         ;
+;     Total combinational functions  ; 557                                         ;
+;     Dedicated logic registers      ; 45                                          ;
+; Total registers                    ; 45                                          ;
 ; Total pins                         ; 39                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -186,6 +186,7 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
 ; drone.v                          ; yes             ; User Verilog HDL File        ; F:/SYCY/dh/drone.v                                             ;         ;
+; random_generator.v               ; yes             ; User Verilog HDL File        ; F:/SYCY/dh/random_generator.v                                  ;         ;
 ; modularPowering.v                ; yes             ; User Verilog HDL File        ; F:/SYCY/dh/modularPowering.v                                   ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; f:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
 ; aglobal191.inc                   ; yes             ; Megafunction                 ; f:/quartus/quartus/libraries/megafunctions/aglobal191.inc      ;         ;
@@ -213,20 +214,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 539                                                                                  ;
+; Estimated Total logic elements              ; 561                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 539                                                                                  ;
+; Total combinational functions               ; 557                                                                                  ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 147                                                                                  ;
-;     -- 3 input functions                    ; 148                                                                                  ;
-;     -- <=2 input functions                  ; 244                                                                                  ;
+;     -- 4 input functions                    ; 146                                                                                  ;
+;     -- 3 input functions                    ; 164                                                                                  ;
+;     -- <=2 input functions                  ; 247                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 372                                                                                  ;
+;     -- normal mode                          ; 390                                                                                  ;
 ;     -- arithmetic mode                      ; 167                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total registers                             ; 31                                                                                   ;
-;     -- Dedicated logic registers            ; 31                                                                                   ;
+; Total registers                             ; 45                                                                                   ;
+;     -- Dedicated logic registers            ; 45                                                                                   ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
 ; I/O pins                                    ; 39                                                                                   ;
@@ -235,35 +236,36 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; modularPowering:modularPowering_inst|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2 ;
 ; Maximum fan-out                             ; 45                                                                                   ;
-; Total fan-out                               ; 1705                                                                                 ;
-; Average fan-out                             ; 2.62                                                                                 ;
+; Total fan-out                               ; 1801                                                                                 ;
+; Average fan-out                             ; 2.63                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                     ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |drone                                    ; 539 (30)            ; 31 (3)                    ; 0           ; 2            ; 2       ; 0         ; 39   ; 0            ; |drone                                                                                                                                      ; drone               ; work         ;
-;    |modularPowering:modularPowering_inst| ; 509 (69)            ; 28 (28)                   ; 0           ; 2            ; 2       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst                                                                                                 ; modularPowering     ; work         ;
-;       |lpm_divide:Mod0|                   ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_q9m:auto_generated|  ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m      ; work         ;
-;             |sign_div_unsign_fkh:divider| ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
-;                |alt_u_div_i4f:divider|    ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f       ; work         ;
-;       |lpm_divide:Mod1|                   ; 217 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_9bm:auto_generated|  ; 217 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated                                                   ; lpm_divide_9bm      ; work         ;
-;             |sign_div_unsign_ulh:divider| ; 217 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider                       ; sign_div_unsign_ulh ; work         ;
-;                |alt_u_div_g7f:divider|    ; 217 (217)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_g7f:divider ; alt_u_div_g7f       ; work         ;
-;       |lpm_divide:Mod2|                   ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_9bm:auto_generated|  ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated                                                   ; lpm_divide_9bm      ; work         ;
-;             |sign_div_unsign_ulh:divider| ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider                       ; sign_div_unsign_ulh ; work         ;
-;                |alt_u_div_g7f:divider|    ; 214 (214)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_g7f:divider ; alt_u_div_g7f       ; work         ;
-;       |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
-;          |mult_aat:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult0|mult_aat:auto_generated                                                          ; mult_aat            ; work         ;
-;       |lpm_mult:Mult1|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult1                                                                                  ; lpm_mult            ; work         ;
-;          |mult_aat:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult1|mult_aat:auto_generated                                                          ; mult_aat            ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                      ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Entity Name         ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |drone                                     ; 557 (39)            ; 45 (3)                    ; 0           ; 2            ; 2       ; 0         ; 39   ; 0            ; |drone                                                                                                                                      ; drone               ; work         ;
+;    |modularPowering:modularPowering_inst|  ; 509 (66)            ; 29 (29)                   ; 0           ; 2            ; 2       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst                                                                                                 ; modularPowering     ; work         ;
+;       |lpm_divide:Mod0|                    ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|   ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider|  ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|     ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f       ; work         ;
+;       |lpm_divide:Mod1|                    ; 220 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_9bm:auto_generated|   ; 220 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated                                                   ; lpm_divide_9bm      ; work         ;
+;             |sign_div_unsign_ulh:divider|  ; 220 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider                       ; sign_div_unsign_ulh ; work         ;
+;                |alt_u_div_g7f:divider|     ; 220 (220)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod1|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_g7f:divider ; alt_u_div_g7f       ; work         ;
+;       |lpm_divide:Mod2|                    ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_9bm:auto_generated|   ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated                                                   ; lpm_divide_9bm      ; work         ;
+;             |sign_div_unsign_ulh:divider|  ; 214 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider                       ; sign_div_unsign_ulh ; work         ;
+;                |alt_u_div_g7f:divider|     ; 214 (214)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_divide:Mod2|lpm_divide_9bm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_g7f:divider ; alt_u_div_g7f       ; work         ;
+;       |lpm_mult:Mult0|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
+;          |mult_aat:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult0|mult_aat:auto_generated                                                          ; mult_aat            ; work         ;
+;       |lpm_mult:Mult1|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult1                                                                                  ; lpm_mult            ; work         ;
+;          |mult_aat:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |drone|modularPowering:modularPowering_inst|lpm_mult:Mult1|mult_aat:auto_generated                                                          ; mult_aat            ; work         ;
+;    |random_generator:randomGenerator_inst| ; 9 (9)               ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |drone|random_generator:randomGenerator_inst                                                                                                ; random_generator    ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -310,34 +312,41 @@ Encoding Type:  One-Hot
 +----------------------+----------------------+-----------------+----------------+----------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; modPower_base[7]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[6]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[5]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[4]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[3]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[2]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[1]                                   ; state_reg.idle      ; yes                    ;
-; modPower_base[0]                                   ; state_reg.idle      ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; privateKey_reg[0]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[7]                                   ; privateKey_reg[0]   ; yes                    ;
+; modPower_base[7]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[6]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[5]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[4]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[3]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[2]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[1]                                    ; state_reg.idle      ; yes                    ;
+; modPower_base[0]                                    ; state_reg.idle      ; yes                    ;
+; privateKey_reg[6]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[5]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[4]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[3]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[2]                                   ; privateKey_reg[0]   ; yes                    ;
+; privateKey_reg[1]                                   ; privateKey_reg[0]   ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                        ;
-+--------------------------------------------------+----------------------------------------+
-; Register name                                    ; Reason for Removal                     ;
-+--------------------------------------------------+----------------------------------------+
-; modularPowering:modularPowering_inst|exp_reg[7]  ; Stuck at GND due to stuck port data_in ;
-; modularPowering:modularPowering_inst|state_reg~8 ; Lost fanout                            ;
-; modularPowering:modularPowering_inst|state_reg~9 ; Lost fanout                            ;
-; Total Number of Removed Registers = 3            ;                                        ;
-+--------------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                    ;
++--------------------------------------------------+--------------------+
+; Register name                                    ; Reason for Removal ;
++--------------------------------------------------+--------------------+
+; modularPowering:modularPowering_inst|state_reg~8 ; Lost fanout        ;
+; modularPowering:modularPowering_inst|state_reg~9 ; Lost fanout        ;
+; Total Number of Removed Registers = 2            ;                    ;
++--------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -345,14 +354,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 45    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 9     ;
-; Number of registers using Asynchronous Clear ; 31    ;
+; Number of registers using Synchronous Load   ; 7     ;
+; Number of registers using Asynchronous Clear ; 45    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 45    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; random_generator:randomGenerator_inst|lfsr_reg[2]  ; 2       ;
+; random_generator:randomGenerator_inst|lfsr_reg[9]  ; 2       ;
+; random_generator:randomGenerator_inst|lfsr_reg[6]  ; 2       ;
+; random_generator:randomGenerator_inst|lfsr_reg[0]  ; 1       ;
+; random_generator:randomGenerator_inst|lfsr_reg[12] ; 1       ;
+; Total number of inverted registers = 5             ;         ;
++----------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -360,8 +383,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |drone|modularPowering:modularPowering_inst|exp_reg[1]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |drone|modularPowering:modularPowering_inst|base_reg[7] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |drone|modularPowering:modularPowering_inst|exp_reg[2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |drone|modularPowering:modularPowering_inst|base_reg[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
@@ -557,43 +580,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+-----------------------------------------------------+
 
 
-+------------------------------------------------------------------+
-; Port Connectivity Checks: "modularPowering:modularPowering_inst" ;
-+-----------+-------+----------+-----------------------------------+
-; Port      ; Type  ; Severity ; Details                           ;
-+-----------+-------+----------+-----------------------------------+
-; exp[6..5] ; Input ; Info     ; Stuck at VCC                      ;
-; exp[3..1] ; Input ; Info     ; Stuck at VCC                      ;
-; exp[7]    ; Input ; Info     ; Stuck at GND                      ;
-; exp[4]    ; Input ; Info     ; Stuck at GND                      ;
-; exp[0]    ; Input ; Info     ; Stuck at GND                      ;
-+-----------+-------+----------+-----------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 39                          ;
-; cycloneiii_ff         ; 31                          ;
-;     CLR               ; 2                           ;
-;     ENA CLR           ; 20                          ;
-;     ENA CLR SLD       ; 9                           ;
-; cycloneiii_lcell_comb ; 541                         ;
+; cycloneiii_ff         ; 45                          ;
+;     ENA CLR           ; 38                          ;
+;     ENA CLR SLD       ; 7                           ;
+; cycloneiii_lcell_comb ; 559                         ;
 ;     arith             ; 167                         ;
 ;         2 data inputs ; 40                          ;
 ;         3 data inputs ; 127                         ;
-;     normal            ; 374                         ;
+;     normal            ; 392                         ;
 ;         0 data inputs ; 21                          ;
-;         2 data inputs ; 185                         ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 147                         ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 180                         ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 146                         ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 26.20                       ;
-; Average LUT depth     ; 20.10                       ;
+; Average LUT depth     ; 19.25                       ;
 +-----------------------+-----------------------------+
 
 
@@ -612,7 +622,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun May 14 21:10:20 2023
+    Info: Processing started: Sun May 14 22:25:12 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dh -c dh
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -625,18 +635,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file modular
 Info (12021): Found 1 design units, including 1 entities, in source file modularpowering.v
     Info (12023): Found entity 1: modularPowering File: F:/SYCY/dh/modularPowering.v Line: 1
 Info (12127): Elaborating entity "drone" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at drone.v(64): incomplete case statement has no default case item File: F:/SYCY/dh/drone.v Line: 64
-Info (10264): Verilog HDL Case Statement information at drone.v(64): all case item expressions in this case statement are onehot File: F:/SYCY/dh/drone.v Line: 64
-Warning (10240): Verilog HDL Always Construct warning at drone.v(62): inferring latch(es) for variable "modPower_base", which holds its previous value in one or more paths through the always construct File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[0]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[1]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[2]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[3]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[4]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[5]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[6]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (10041): Inferred latch for "modPower_base[7]" at drone.v(62) File: F:/SYCY/dh/drone.v Line: 62
-Info (12128): Elaborating entity "modularPowering" for hierarchy "modularPowering:modularPowering_inst" File: F:/SYCY/dh/drone.v Line: 81
+Warning (10240): Verilog HDL Always Construct warning at drone.v(45): inferring latch(es) for variable "privateKey_reg", which holds its previous value in one or more paths through the always construct File: F:/SYCY/dh/drone.v Line: 45
+Warning (10270): Verilog HDL Case Statement warning at drone.v(69): incomplete case statement has no default case item File: F:/SYCY/dh/drone.v Line: 69
+Info (10264): Verilog HDL Case Statement information at drone.v(69): all case item expressions in this case statement are onehot File: F:/SYCY/dh/drone.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at drone.v(67): inferring latch(es) for variable "modPower_base", which holds its previous value in one or more paths through the always construct File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[0]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[1]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[2]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[3]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[4]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[5]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[6]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "modPower_base[7]" at drone.v(67) File: F:/SYCY/dh/drone.v Line: 67
+Info (10041): Inferred latch for "privateKey_reg[0]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[1]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[2]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[3]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[4]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[5]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[6]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (10041): Inferred latch for "privateKey_reg[7]" at drone.v(45) File: F:/SYCY/dh/drone.v Line: 45
+Info (12128): Elaborating entity "modularPowering" for hierarchy "modularPowering:modularPowering_inst" File: F:/SYCY/dh/drone.v Line: 86
 Warning (10230): Verilog HDL assignment warning at modularPowering.v(16): truncated value with size 3 to match size of target (2) File: F:/SYCY/dh/modularPowering.v Line: 16
 Warning (10230): Verilog HDL assignment warning at modularPowering.v(17): truncated value with size 3 to match size of target (2) File: F:/SYCY/dh/modularPowering.v Line: 17
 Warning (10230): Verilog HDL assignment warning at modularPowering.v(18): truncated value with size 3 to match size of target (2) File: F:/SYCY/dh/modularPowering.v Line: 18
@@ -646,6 +665,7 @@ Warning (10230): Verilog HDL assignment warning at modularPowering.v(86): trunca
 Warning (10230): Verilog HDL assignment warning at modularPowering.v(88): truncated value with size 32 to match size of target (8) File: F:/SYCY/dh/modularPowering.v Line: 88
 Warning (10270): Verilog HDL Case Statement warning at modularPowering.v(78): incomplete case statement has no default case item File: F:/SYCY/dh/modularPowering.v Line: 78
 Info (10264): Verilog HDL Case Statement information at modularPowering.v(78): all case item expressions in this case statement are onehot File: F:/SYCY/dh/modularPowering.v Line: 78
+Info (12128): Elaborating entity "random_generator" for hierarchy "random_generator:randomGenerator_inst" File: F:/SYCY/dh/drone.v Line: 93
 Info (278001): Inferred 5 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "modularPowering:modularPowering_inst|Mult0" File: F:/SYCY/dh/modularPowering.v Line: 86
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "modularPowering:modularPowering_inst|Mod1" File: F:/SYCY/dh/modularPowering.v Line: 86
@@ -710,6 +730,8 @@ Info (12133): Instantiated megafunction "modularPowering:modularPowering_inst|lp
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (13000): Registers with preset signals will power-up high File: F:/SYCY/dh/random_generator.v Line: 16
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "mess_out[8]" is stuck at VCC File: F:/SYCY/dh/drone.v Line: 11
     Warning (13410): Pin "mess_out[9]" is stuck at GND File: F:/SYCY/dh/drone.v Line: 11
@@ -724,16 +746,16 @@ Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file F:/SYCY/dh/output_files/dh.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 580 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 605 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 539 logic cells
+    Info (21061): Implemented 564 logic cells
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
     Info: Peak virtual memory: 4775 megabytes
-    Info: Processing ended: Sun May 14 21:10:30 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Sun May 14 22:25:21 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +------------------------------------------+

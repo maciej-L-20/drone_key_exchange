@@ -6,5 +6,6 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/drone.v}
+vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/random_generator.v}
 vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/modularPowering.v}
 

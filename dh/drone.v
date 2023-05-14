@@ -14,7 +14,8 @@ output [N-1:0] key,
 output key_rdy
 );
 reg [N-1:0] G = 8'b0000101;
-reg [N-1:0] privateKey = 8'b01101110;
+wire[N-1:0] privateKey_stream;
+reg[N-1:0] privateKey_reg;
 reg [N-1:0] id= 8'b00000001;
 wire rdy_modPower;
 wire [N-1:0] res_modPower;
@@ -42,12 +43,16 @@ reg [size-1:0] state_reg,state_next;
 		// Next state logic
 	always@(*) begin
 		case(state_reg)
-			idle 	 :	if (init) state_next = send_mess;
+			idle 	 :	if (init) begin
+			state_next = send_mess;
+			privateKey_reg = privateKey_stream;
+			end
 					   else		  state_next = idle;
 			send_mess: if(received)
 							state_next = compute_key;
 							else state_next = send_mess;
-			compute_key:	state_next = compute_key;
+			compute_key:	if(!key_rdy) state_next = compute_key;
+								else state_next = idle;
 			default: state_next = idle;
 		endcase
 	end
@@ -56,7 +61,7 @@ reg [size-1:0] state_reg,state_next;
 	assign mess_rdy = (rdy_modPower & state_reg == send_mess) ? 1'b1:1'b0;
 	assign key = (rdy_modPower & state_reg == compute_key) ? res_modPower:8'b0;
 	assign key_rdy = (rdy_modPower & state_reg == compute_key) ? 1'b1:1'b0;
-	
+
 	// Microoperation logic
 	always@(*) begin
 	if(state_reg!=state_next) start<=1'b1;
@@ -75,9 +80,16 @@ modularPowering #(N,P) modularPowering_inst(
 .ena(ena),
 .start(start),
 .base(modPower_base),
-.exp(privateKey[7:0]),
-.res(res_modPower[7:0]),
+.exp(privateKey_reg),
+.res(res_modPower),
 .rdy(rdy_modPower)
+);
+
+random_generator randomGenerator_inst(
+.rst(rst),
+.clk(clk),
+.ena(ena),
+.stream(privateKey_stream)
 );
 
 
