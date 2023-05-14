@@ -1,0 +1,36 @@
+module drone
+#(parameter N = 8;
+)
+(
+input  	   	  	 rst,
+input  			  	 clk,
+input  			  	 ena,
+input  			  	 start,
+)
+reg P[7:0];
+reg G[7:0];
+reg privateKey[7:0];
+	// Registers
+	always@(posedge clk, posedge rst) begin
+		if (rst) begin
+			P <= {(N){1'b0}};
+			G <= {(N){1'b0}};
+			privateKey	<= {(N){1'b0}};
+			end
+		else if (ena) begin
+			P=8'b1011111;
+			G=8'b0000101;
+			privateKey=8'b01101110;
+		end		
+	end
+	modularPowering modularPowering_inst(
+	.rst(rst),
+.clk(clk),
+.ena(ena),
+.start(start),
+.base(,
+input [N-1:0] exp,
+	
+	
+	
+	)

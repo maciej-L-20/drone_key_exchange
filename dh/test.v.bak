@@ -1,0 +1,13 @@
+module modularPowering
+#(
+parameter P=7,
+parameter N=8)
+(
+input  	   	  	 rst,
+input  			  	 clk,
+input  			  	 ena,
+input  			  	 start,
+input [N-1:0] base,
+input [N-1:0] exp,
+output reg [N-1:0] res,
+output reg rdy);
