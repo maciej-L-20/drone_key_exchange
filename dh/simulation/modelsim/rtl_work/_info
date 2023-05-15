@@ -9,69 +9,69 @@ z2
 cModel Technology
 Z0 dF:/SYCY/repo/sycy_23l_projekt/dh/simulation/modelsim
 vdrone
-Z1 !s110 1684159260
+!s110 1684165743
 !i10b 1
 !s100 kf<hTK6WZ88UA>BzB;S>n0
 IncbWi0BQNPJ>]_=Od>[]60
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
 w1684159139
 8F:/SYCY/repo/sycy_23l_projekt/dh/drone.v
 FF:/SYCY/repo/sycy_23l_projekt/dh/drone.v
 L0 1
-Z3 OV;L;10.5b;63
+Z2 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1684159260.000000
+!s108 1684165743.000000
 !s107 F:/SYCY/repo/sycy_23l_projekt/dh/drone.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/drone.v|
 !i113 1
-Z5 o-vlog01compat -work work
-Z6 !s92 -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh
-Z7 tCvgOpt 0
+Z3 o-vlog01compat -work work
+Z4 !s92 -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh
+Z5 tCvgOpt 0
 vmodularPowering
-R1
+Z6 !s110 1684165744
 !i10b 1
-!s100 F<Hez6cB=QISo<z6X9_Da0
-IoX9Oh;>H<02dH53b16VSo1
-R2
+!s100 VFVH;nAnP9XJA9IK=_fU90
+IEWGYQEPnU8<44NDKN?8mo2
+R1
 R0
-w1684083725
+w1684165682
 8F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v
 FF:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v
 L0 1
-R3
+R2
 r1
 !s85 0
 31
-R4
+Z7 !s108 1684165744.000000
 !s107 F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v|
 !i113 1
+R3
+R4
 R5
-R6
-R7
 nmodular@powering
 vrandom_generator
-R1
+R6
 !i10b 1
 !s100 EOoIK@^4TYKMoK9z1eSU>2
 IePz1FZ4>VLU?liCc_o^LM2
-R2
+R1
 R0
 w1684095731
 8F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v
 FF:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v
 L0 1
-R3
+R2
 r1
 !s85 0
 31
-R4
+R7
 !s107 F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v|
 !i113 1
+R3
+R4
 R5
-R6
-R7

@@ -28,24 +28,17 @@ reg rdy_next;
 		if (rst) begin
 			state_reg <= idle;
 			rdy		 <= 1'b0;
-		end
-		else if (ena) begin
-			state_reg <= state_next;
-			rdy		 <= rdy_next;
-		end
-	end
-			// Registers
-	always@(posedge clk, posedge rst) begin
-		if (rst) begin
 			base_reg <= {(N){1'b0}};
 			exp_reg <= {(N){1'b0}};
 			res	<= {(N){1'b0}};
 		end
 		else if (ena) begin
+			state_reg <= state_next;
+			rdy		 <= rdy_next;
 			base_reg	<= base_next;
 			exp_reg <= exp_next;
 			res 	<= res_next;
-		end		
+		end
 	end
 	
 		// Next state logic
