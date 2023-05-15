@@ -5,7 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/drone.v}
-vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/random_generator.v}
-vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/modularPowering.v}
+vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/drone.v}
+vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v}
+vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v}
 

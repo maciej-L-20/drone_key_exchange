@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at drone.v(67): always construct contains both blocking and non-blocking assignments File: F:/SYCY/dh/drone.v Line: 67
+Warning (10268): Verilog HDL information at drone.v(46): always construct contains both blocking and non-blocking assignments File: F:/SYCY/repo/sycy_23l_projekt/dh/drone.v Line: 46

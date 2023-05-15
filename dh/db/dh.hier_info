@@ -1,14 +1,16 @@
 |drone
-mess_input[0] => Selector3.IN2
-mess_input[1] => Selector4.IN2
-mess_input[2] => Selector6.IN2
-mess_input[3] => Selector7.IN2
-mess_input[4] => Selector8.IN2
-mess_input[5] => Selector9.IN2
-mess_input[6] => Selector10.IN2
-mess_input[7] => Selector11.IN2
+mess_input[0] => Selector3.IN1
+mess_input[1] => Selector10.IN1
+mess_input[2] => Selector9.IN1
+mess_input[3] => Selector8.IN1
+mess_input[4] => Selector7.IN1
+mess_input[5] => Selector6.IN1
+mess_input[6] => Selector5.IN1
+mess_input[7] => Selector4.IN1
+received => Selector11.IN1
 received => Selector2.IN2
 received => Selector1.IN1
+init => Selector11.IN2
 init => privateKey_reg[0].IN0
 init => Selector1.IN2
 init => Selector0.IN1

@@ -7,47 +7,47 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dF:/SYCY/dh/simulation/modelsim
+Z0 dF:/SYCY/repo/sycy_23l_projekt/dh/simulation/modelsim
 vdrone
-Z1 !s110 1684096009
+Z1 !s110 1684159260
 !i10b 1
-!s100 1h21TgCO@A7bllH5BmlLD2
-II<:MNVfS1YVliaIF[T]QB1
+!s100 kf<hTK6WZ88UA>BzB;S>n0
+IncbWi0BQNPJ>]_=Od>[]60
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1684095910
-8F:/SYCY/dh/drone.v
-FF:/SYCY/dh/drone.v
+w1684159139
+8F:/SYCY/repo/sycy_23l_projekt/dh/drone.v
+FF:/SYCY/repo/sycy_23l_projekt/dh/drone.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1684096009.000000
-!s107 F:/SYCY/dh/drone.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/dh|F:/SYCY/dh/drone.v|
+Z4 !s108 1684159260.000000
+!s107 F:/SYCY/repo/sycy_23l_projekt/dh/drone.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/drone.v|
 !i113 1
 Z5 o-vlog01compat -work work
-Z6 !s92 -vlog01compat -work work +incdir+F:/SYCY/dh
+Z6 !s92 -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh
 Z7 tCvgOpt 0
 vmodularPowering
 R1
 !i10b 1
 !s100 F<Hez6cB=QISo<z6X9_Da0
-In5Sz8b>05Z8;a3jg1H8>33
+IoX9Oh;>H<02dH53b16VSo1
 R2
 R0
 w1684083725
-8F:/SYCY/dh/modularPowering.v
-FF:/SYCY/dh/modularPowering.v
+8F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v
+FF:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v
 L0 1
 R3
 r1
 !s85 0
 31
 R4
-!s107 F:/SYCY/dh/modularPowering.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/dh|F:/SYCY/dh/modularPowering.v|
+!s107 F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v|
 !i113 1
 R5
 R6
@@ -57,20 +57,20 @@ vrandom_generator
 R1
 !i10b 1
 !s100 EOoIK@^4TYKMoK9z1eSU>2
-IKE5LNioiOkZHfS2D<`Eg[1
+IePz1FZ4>VLU?liCc_o^LM2
 R2
 R0
 w1684095731
-8F:/SYCY/dh/random_generator.v
-FF:/SYCY/dh/random_generator.v
+8F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v
+FF:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v
 L0 1
 R3
 r1
 !s85 0
 31
 R4
-!s107 F:/SYCY/dh/random_generator.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/dh|F:/SYCY/dh/random_generator.v|
+!s107 F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/repo/sycy_23l_projekt/dh|F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v|
 !i113 1
 R5
 R6

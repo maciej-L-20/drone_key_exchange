@@ -40,21 +40,36 @@ reg [size-1:0] state_reg,state_next;
 	
 
 	
-		// Next state logic
+// Next state logic
 	always@(*) begin
+	
 		case(state_reg)
-			idle 	 :	if (init) begin
-			state_next = send_mess;
-			privateKey_reg = privateKey_stream;
+			idle 	 :	
+			if (init) 
+			begin
+				state_next = send_mess;
+				privateKey_reg = privateKey_stream;
+				modPower_base = G;
 			end
-					   else		  state_next = idle;
-			send_mess: if(received)
-							state_next = compute_key;
-							else state_next = send_mess;
+			else		  state_next = idle;
+			
+			send_mess: 
+			if(received)
+				begin
+					modPower_base = mess_input;
+					state_next = compute_key;
+				end
+			else state_next = send_mess;
+			
 			compute_key:	if(!key_rdy) state_next = compute_key;
 								else state_next = idle;
+								
 			default: state_next = idle;
 		endcase
+		
+		if(state_reg!=state_next) start<=1'b1;
+		else start<=1'b0;
+		
 	end
 	
 	assign mess_out = {id, res_modPower};
@@ -62,18 +77,6 @@ reg [size-1:0] state_reg,state_next;
 	assign key = (rdy_modPower & state_reg == compute_key) ? res_modPower:8'b0;
 	assign key_rdy = (rdy_modPower & state_reg == compute_key) ? 1'b1:1'b0;
 
-	// Microoperation logic
-	always@(*) begin
-	if(state_reg!=state_next) start<=1'b1;
-	else start<=1'b0;
-		case(state_reg)
-			send_mess:
-			modPower_base = G;
-			compute_key:
-			modPower_base = mess_input;
-		endcase
-		end
-	
 modularPowering #(N,P) modularPowering_inst(
 .rst(rst),
 .clk(clk),

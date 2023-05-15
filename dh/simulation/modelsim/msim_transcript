@@ -10,59 +10,43 @@
 # Copying F:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/drone.v}
+# vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/drone.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:26:49 on May 14,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/dh" F:/SYCY/dh/drone.v 
+# Start time: 16:01:00 on May 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/repo/sycy_23l_projekt/dh" F:/SYCY/repo/sycy_23l_projekt/dh/drone.v 
 # -- Compiling module drone
 # 
 # Top level modules:
 # 	drone
-# End time: 22:26:49 on May 14,2023, Elapsed time: 0:00:00
+# End time: 16:01:00 on May 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/random_generator.v}
+# vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:26:49 on May 14,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/dh" F:/SYCY/dh/random_generator.v 
+# Start time: 16:01:00 on May 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/repo/sycy_23l_projekt/dh" F:/SYCY/repo/sycy_23l_projekt/dh/random_generator.v 
 # -- Compiling module random_generator
 # 
 # Top level modules:
 # 	random_generator
-# End time: 22:26:49 on May 14,2023, Elapsed time: 0:00:00
+# End time: 16:01:00 on May 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+F:/SYCY/dh {F:/SYCY/dh/modularPowering.v}
+# vlog -vlog01compat -work work +incdir+F:/SYCY/repo/sycy_23l_projekt/dh {F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:26:49 on May 14,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/dh" F:/SYCY/dh/modularPowering.v 
+# Start time: 16:01:00 on May 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/repo/sycy_23l_projekt/dh" F:/SYCY/repo/sycy_23l_projekt/dh/modularPowering.v 
 # -- Compiling module modularPowering
 # 
 # Top level modules:
 # 	modularPowering
-# End time: 22:26:49 on May 14,2023, Elapsed time: 0:00:00
+# End time: 16:01:00 on May 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vsim work.drone
 # vsim work.drone 
-# Start time: 22:26:58 on May 14,2023
-# Loading work.drone
-# Loading work.modularPowering
-# Loading work.random_generator
-vsim work.drone
-# End time: 22:27:01 on May 14,2023, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 0
-# vsim work.drone 
-# Start time: 22:27:01 on May 14,2023
+# Start time: 16:01:33 on May 15,2023
 # Loading work.drone
 # Loading work.modularPowering
 # Loading work.random_generator
 do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-do test_drone.do
-# End time: 22:39:53 on May 14,2023, Elapsed time: 0:12:52
+# End time: 16:03:25 on May 15,2023, Elapsed time: 0:01:52
 # Errors: 0, Warnings: 0
