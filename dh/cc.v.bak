@@ -61,20 +61,18 @@ reg [size-1:0] state_reg,state_next;
 				received_first_stage = mess_input_cc; // pomarańczowy / 1. część od drona
 				
 				privateKey_reg = privateKey_stream; // losowanie klucza 
+				modPower_base = G; // wiadomo
 			end
 			
 			compute_second_stage	:
 				begin
-					modPower_base = G;
-					if(cc_rdy)state_next = compute_key; // obliczanie klucza	
-					else state_next = compute_second_stage;
-					
+					state_next = compute_key; // obliczanie klucza				
+					modPower_base = received_first_stage[7:0]; // najstarsze bity inputu stają się bazą potęgi, tworzymy ostateczny, tajny klucz
 				end
 			compute_key:
 				begin
-					modPower_base = received_first_stage[7:0]; // najstarsze bity inputu stają się bazą potęgi, tworzymy ostateczny, tajny klucz
-					if(key_rdy) state_next = listening; // jeśli gotowy, przejdź do idle 
-					else state_next = compute_key;
+					if(!key_rdy) state_next = compute_key; // jeśli gotowy, przejdź do idle 
+					else state_next = listening;			
 				end
 			default: state_next = listening;
 		endcase
@@ -84,10 +82,9 @@ reg [size-1:0] state_reg,state_next;
 		
 	end
 	
-	assign cc_rdy = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0; // określa czy dron ma zczytać
+	assign mess_out = res_modPower; // cały czas działa // bez id bo to nie dron XD
 	
-	assign mess_out_cc = (rdy_modPower & state_reg == compute_second_stage) ? res_modPower:8'b0; // cały czas działa // bez id bo to nie dron XD
-	assign mess_rdy_cc = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0;
+	assign cc_rdy = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0; // określa czy dron ma zczytać
 	
 	assign key = (rdy_modPower & state_reg == compute_key) ? res_modPower:8'b0; // przypisuje do klucza obliczoną już wartość
 	assign key_rdy = (rdy_modPower & state_reg == compute_key) ? 1'b1:1'b0; // czy klucz jest gotowy 

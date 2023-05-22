@@ -4,39 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "mess_out[0]",
+					"name" : "cc_rdy",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[1]",
+					"name" : "mess_out_cc[0]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[2]",
+					"name" : "mess_out_cc[1]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[3]",
+					"name" : "mess_out_cc[2]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[4]",
+					"name" : "mess_out_cc[3]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[5]",
+					"name" : "mess_out_cc[4]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[6]",
+					"name" : "mess_out_cc[5]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_out[7]",
+					"name" : "mess_out_cc[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_rdy",
+					"name" : "mess_out_cc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mess_rdy_cc",
 					"strict" : false
 				},
 				{
@@ -88,43 +92,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "init",
+					"name" : "drone_rdy",
 					"strict" : false
 				},
 				{
-					"name" : "received",
+					"name" : "mess_input_cc[7]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[7]",
+					"name" : "mess_input_cc[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[6]",
+					"name" : "mess_input_cc[5]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[5]",
+					"name" : "mess_input_cc[4]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[4]",
+					"name" : "mess_input_cc[3]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[3]",
+					"name" : "mess_input_cc[2]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[2]",
+					"name" : "mess_input_cc[1]",
 					"strict" : false
 				},
 				{
-					"name" : "mess_input[1]",
-					"strict" : false
-				},
-				{
-					"name" : "mess_input[0]",
+					"name" : "mess_input_cc[0]",
 					"strict" : false
 				}
 			]

@@ -1,39 +1,38 @@
-|drone
-mess_input[0] => Selector3.IN1
-mess_input[1] => Selector10.IN1
-mess_input[2] => Selector9.IN1
-mess_input[3] => Selector8.IN1
-mess_input[4] => Selector7.IN1
-mess_input[5] => Selector6.IN1
-mess_input[6] => Selector5.IN1
-mess_input[7] => Selector4.IN1
-received => Selector11.IN1
-received => Selector2.IN2
-received => Selector1.IN1
-init => Selector11.IN2
-init => privateKey_reg[0].IN0
-init => Selector1.IN2
-init => Selector0.IN1
+|cc
+drone_rdy => state_next.OUTPUTSELECT
+drone_rdy => state_next.OUTPUTSELECT
+drone_rdy => state_next.OUTPUTSELECT
+drone_rdy => privateKey_reg[1].IN0
+drone_rdy => Selector14.IN0
+mess_input_cc[0] => received_first_stage[0].DATAIN
+mess_input_cc[1] => received_first_stage[1].DATAIN
+mess_input_cc[2] => received_first_stage[2].DATAIN
+mess_input_cc[3] => received_first_stage[3].DATAIN
+mess_input_cc[4] => received_first_stage[4].DATAIN
+mess_input_cc[5] => received_first_stage[5].DATAIN
+mess_input_cc[6] => received_first_stage[6].DATAIN
+mess_input_cc[7] => received_first_stage[7].DATAIN
+mess_input_cc[8] => ~NO_FANOUT~
+mess_input_cc[9] => ~NO_FANOUT~
+mess_input_cc[10] => ~NO_FANOUT~
+mess_input_cc[11] => ~NO_FANOUT~
+mess_input_cc[12] => ~NO_FANOUT~
+mess_input_cc[13] => ~NO_FANOUT~
+mess_input_cc[14] => ~NO_FANOUT~
+mess_input_cc[15] => ~NO_FANOUT~
 rst => rst.IN2
 clk => clk.IN2
 ena => ena.IN2
-mess_out[0] << modularPowering:modularPowering_inst.res
-mess_out[1] << modularPowering:modularPowering_inst.res
-mess_out[2] << modularPowering:modularPowering_inst.res
-mess_out[3] << modularPowering:modularPowering_inst.res
-mess_out[4] << modularPowering:modularPowering_inst.res
-mess_out[5] << modularPowering:modularPowering_inst.res
-mess_out[6] << modularPowering:modularPowering_inst.res
-mess_out[7] << modularPowering:modularPowering_inst.res
-mess_out[8] << <VCC>
-mess_out[9] << <GND>
-mess_out[10] << <GND>
-mess_out[11] << <GND>
-mess_out[12] << <GND>
-mess_out[13] << <GND>
-mess_out[14] << <GND>
-mess_out[15] << <GND>
-mess_rdy << mess_rdy.DB_MAX_OUTPUT_PORT_TYPE
+cc_rdy << cc_rdy.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[0] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[1] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[2] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[3] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[4] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[5] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[6] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_out_cc[7] << mess_out_cc.DB_MAX_OUTPUT_PORT_TYPE
+mess_rdy_cc << cc_rdy.DB_MAX_OUTPUT_PORT_TYPE
 key[0] << key.DB_MAX_OUTPUT_PORT_TYPE
 key[1] << key.DB_MAX_OUTPUT_PORT_TYPE
 key[2] << key.DB_MAX_OUTPUT_PORT_TYPE
@@ -45,7 +44,7 @@ key[7] << key.DB_MAX_OUTPUT_PORT_TYPE
 key_rdy << key.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|drone|modularPowering:modularPowering_inst
+|cc|modularPowering:modularPowering_inst
 rst => res[0]~reg0.ACLR
 rst => res[1]~reg0.ACLR
 rst => res[2]~reg0.ACLR
@@ -156,7 +155,7 @@ res[7] <= res[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rdy <= rdy~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|drone|random_generator:randomGenerator_inst
+|cc|random_generator:randomGenerator_inst
 rst => lfsr_reg[0].PRESET
 rst => lfsr_reg[1].ACLR
 rst => lfsr_reg[2].PRESET

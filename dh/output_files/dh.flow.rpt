@@ -1,5 +1,5 @@
 Flow report for dh
-Mon May 15 17:48:44 2023
+Mon May 22 18:03:04 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon May 15 17:48:44 2023       ;
+; Flow Status                        ; Successful - Mon May 22 18:03:04 2023       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; dh                                          ;
-; Top-level Entity Name              ; drone                                       ;
+; Top-level Entity Name              ; cc                                          ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 568 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 558 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 581 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 578 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 45 / 114,480 ( < 1 % )                      ;
 ; Total registers                    ; 45                                          ;
 ; Total pins                         ; 39 / 529 ( 7 % )                            ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/15/2023 17:48:09 ;
+; Start date & time ; 05/22/2023 18:02:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; dh                  ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589200.168416568908380         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 10995770589200.168477135007000         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -87,13 +87,13 @@ https://fpgasoftware.intel.com/eula.
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; drone       ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; drone       ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; drone       ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; cc          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; cc          ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; cc          ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; drone                                  ; dh            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; cc                                     ; dh            ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -102,12 +102,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4776 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:17     ; 1.0                     ; 5699 MB             ; 00:00:24                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4691 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.3                     ; 4849 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4647 MB             ; 00:00:01                           ;
-; Total                ; 00:00:32     ; --                      ; --                  ; 00:00:46                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4776 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:17     ; 1.0                     ; 5699 MB             ; 00:00:25                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4690 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 4847 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4648 MB             ; 00:00:01                           ;
+; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
