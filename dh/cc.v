@@ -2,17 +2,13 @@ module cc
 #(parameter N = 8,
 parameter P = 137)
 (
-input drone_rdy, // wiadomość od drona, że pora odebrać 1. część klucza / pomarańczowy 
-input [2*N-1:0] mess_input_cc, // wiadomość wysyłana od drona - pomarańczowy
+input drone_rdy, // wiadomość od drona, że pora odebrać 1. część klucza
+input [2*N-1:0] mess_input, // wiadomość wysyłana od drona
 input  	   	  	 rst, 
 input  			  	 clk,
 input  			  	 ena,
-
-output cc_rdy, // potwierdzenie, że jest gotów na komunikację
-
-output [N-1:0] mess_out_cc, // wysyłane do drona - obliczona część klucza
-
-output mess_rdy_cc, // info, że wiadmość obliczona --- dopiero wtedy cc nasłuchuje
+output [N-1:0] mess_out, // wysyłane do drona - obliczona część klucza
+output mess_rdy, // info, że wiadmość obliczona --- dopiero wtedy cc nasłuchuje
 output [N-1:0] key, // klucz końcowy
 output key_rdy // klucz obliczony 
 
@@ -55,18 +51,17 @@ reg [size-1:0] state_reg,state_next;
 	always@(*) begin
 		case(state_reg)
 			listening	:
-			if(drone_rdy) begin
-				state_next = compute_second_stage; // niebieski / 1. część nasza 
-				
-				received_first_stage = mess_input_cc; // pomarańczowy / 1. część od drona
-				
-				privateKey_reg = privateKey_stream; // losowanie klucza 
+			if(drone_rdy) begin 				
+				privateKey_reg = privateKey_stream; // losowanie klucza
+				received_first_stage = mess_input; // 1. część od drona				 
+				state_next = compute_second_stage; // 1. część nasza
 			end
+			else state_next = listening;
 			
 			compute_second_stage	:
 				begin
 					modPower_base = G;
-					if(cc_rdy)state_next = compute_key; // obliczanie klucza	
+					if(mess_rdy)state_next = compute_key; // obliczanie klucza	
 					else state_next = compute_second_stage;
 					
 				end
@@ -83,11 +78,8 @@ reg [size-1:0] state_reg,state_next;
 		else start<=1'b0;
 		
 	end
-	
-	assign cc_rdy = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0; // określa czy dron ma zczytać
-	
-	assign mess_out_cc = (rdy_modPower & state_reg == compute_second_stage) ? res_modPower:8'b0; // cały czas działa // bez id bo to nie dron XD
-	assign mess_rdy_cc = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0;
+	assign mess_out = (rdy_modPower & state_reg == compute_second_stage) ? res_modPower:8'b0; // cały czas działa
+	assign mess_rdy = (rdy_modPower & state_reg == compute_second_stage) ? 1'b1:1'b0;
 	
 	assign key = (rdy_modPower & state_reg == compute_key) ? res_modPower:8'b0; // przypisuje do klucza obliczoną już wartość
 	assign key_rdy = (rdy_modPower & state_reg == compute_key) ? 1'b1:1'b0; // czy klucz jest gotowy 
@@ -110,17 +102,5 @@ random_generator randomGenerator_inst(
 .ena(ena),
 .stream(privateKey_stream)
 );
-/*
-drone drone_inst(
-.rst(rst),
-.clk(clk),
-.ena(ena),
-
-.mess_input_drone(mess_out_cc),
-.cc_ready(mess_rdy_cc),
-.mess_out(mess_input_cc),
-.mess_rdy_drone(drone_rdy)
-);
-*/
 
 endmodule
