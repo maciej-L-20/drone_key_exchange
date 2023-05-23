@@ -19,7 +19,7 @@ localparam [size-1:0] idle = 3'h0,
 							 operations = 3'h3;
 reg [size-1:0] state_reg, state_next;
 reg [N-1:0] base_reg,base_next;
-reg [N-1:0] exp_reg, exp_next;
+reg [N:0] exp_reg, exp_next;
 reg [N-1:0] res_next;
 reg rdy_next;
 
@@ -29,7 +29,7 @@ reg rdy_next;
 			state_reg <= idle;
 			rdy		 <= 1'b0;
 			base_reg <= {(N){1'b0}};
-			exp_reg <= {(N){1'b0}};
+			exp_reg <= {(N+1){1'b0}};
 			res	<= {(N){1'b0}};
 		end
 		else if (ena) begin
@@ -72,7 +72,7 @@ reg rdy_next;
 			init		:	begin
 								base_next = base%P;
 								res_next=1;
-								exp_next = exp;
+								exp_next = {1'b0,exp};
 							end
 			operations: begin
 							if (exp_reg[0]!=0)

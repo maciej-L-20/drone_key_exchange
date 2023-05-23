@@ -3,60 +3,20 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -30.532
-TNS   : -1247.808
-
-Type  : Slow 1200mV 85C Model Setup 'state_reg.listening'
-Slack : -4.201
-TNS   : -46.940
-
-Type  : Slow 1200mV 85C Model Setup 'drone_rdy'
-Slack : -3.150
-TNS   : -19.611
-
-Type  : Slow 1200mV 85C Model Hold 'drone_rdy'
-Slack : -1.272
-TNS   : -1.272
-
-Type  : Slow 1200mV 85C Model Hold 'state_reg.listening'
-Slack : -0.586
-TNS   : -0.586
+Slack : -27.022
+TNS   : -935.731
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.402
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -116.817
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'drone_rdy'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state_reg.listening'
-Slack : 0.368
-TNS   : 0.000
+TNS   : -86.688
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -28.048
-TNS   : -1140.109
-
-Type  : Slow 1200mV 0C Model Setup 'state_reg.listening'
-Slack : -3.957
-TNS   : -42.517
-
-Type  : Slow 1200mV 0C Model Setup 'drone_rdy'
-Slack : -2.989
-TNS   : -18.539
-
-Type  : Slow 1200mV 0C Model Hold 'drone_rdy'
-Slack : -1.060
-TNS   : -1.060
-
-Type  : Slow 1200mV 0C Model Hold 'state_reg.listening'
-Slack : -0.473
-TNS   : -0.473
+Slack : -24.344
+TNS   : -857.164
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.354
@@ -64,50 +24,18 @@ TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -116.817
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'drone_rdy'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state_reg.listening'
-Slack : 0.318
-TNS   : 0.000
+TNS   : -86.688
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -14.656
-TNS   : -595.663
-
-Type  : Fast 1200mV 0C Model Setup 'state_reg.listening'
-Slack : -1.798
-TNS   : -18.441
-
-Type  : Fast 1200mV 0C Model Setup 'drone_rdy'
-Slack : -0.935
-TNS   : -4.486
-
-Type  : Fast 1200mV 0C Model Hold 'drone_rdy'
-Slack : -0.834
-TNS   : -0.834
-
-Type  : Fast 1200mV 0C Model Hold 'state_reg.listening'
-Slack : -0.387
-TNS   : -0.387
+Slack : -12.672
+TNS   : -440.618
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.181
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -76.620
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'drone_rdy'
-Slack : -3.000
-TNS   : -3.282
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state_reg.listening'
-Slack : 0.342
-TNS   : 0.000
+TNS   : -54.279
 
 ------------------------------------------------------------

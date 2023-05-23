@@ -1,11 +1,5 @@
 
-State Machine - |cc|state_reg
-Name state_reg.listening state_reg.compute_key state_reg.compute_second_stage 
-state_reg.listening 0 0 0 
-state_reg.compute_second_stage 1 0 1 
-state_reg.compute_key 1 1 0 
-
-State Machine - |cc|modularPowering:modularPowering_inst|state_reg
+State Machine - |modularPowering|state_reg
 Name state_reg.operations state_reg.check state_reg.init state_reg.idle 
 state_reg.idle 0 0 0 0 
 state_reg.init 0 0 1 1 

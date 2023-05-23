@@ -1,0 +1,442 @@
+Slow 1200mV 85C Model report for dh
+Tue May 23 13:45:25 2023
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Slow 1200mV 85C Model Fmax Summary
+  3. Timing Closure Recommendations
+  4. Slow 1200mV 85C Model Setup Summary
+  5. Slow 1200mV 85C Model Hold Summary
+  6. Slow 1200mV 85C Model Recovery Summary
+  7. Slow 1200mV 85C Model Removal Summary
+  8. Slow 1200mV 85C Model Minimum Pulse Width Summary
+  9. Slow 1200mV 85C Model Setup: 'clk'
+ 10. Slow 1200mV 85C Model Setup: 'state_reg.listening'
+ 11. Slow 1200mV 85C Model Setup: 'drone_rdy'
+ 12. Slow 1200mV 85C Model Hold: 'drone_rdy'
+ 13. Slow 1200mV 85C Model Hold: 'state_reg.listening'
+ 14. Slow 1200mV 85C Model Hold: 'clk'
+ 15. Slow 1200mV 85C Model Metastability Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                        ;
++------------+-----------------+---------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
++------------+-----------------+---------------------+------+
+; 31.07 MHz  ; 31.07 MHz       ; clk                 ;      ;
+; 200.16 MHz ; 200.16 MHz      ; state_reg.listening ;      ;
++------------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-----------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary           ;
++---------------------+---------+---------------+
+; Clock               ; Slack   ; End Point TNS ;
++---------------------+---------+---------------+
+; clk                 ; -31.183 ; -1264.907     ;
+; state_reg.listening ; -3.234  ; -38.798       ;
+; drone_rdy           ; -1.742  ; -9.117        ;
++---------------------+---------+---------------+
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; drone_rdy           ; -1.041 ; -2.079        ;
+; state_reg.listening ; 0.195  ; 0.000         ;
+; clk                 ; 0.403  ; 0.000         ;
++---------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; clk                 ; -3.000 ; -116.817           ;
+; drone_rdy           ; -3.000 ; -3.000             ;
+; state_reg.listening ; 0.351  ; 0.000              ;
++---------------------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                                                                                            ;
++---------+---------------------------------------------------------------+---------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                                     ; To Node                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------------------------------------------------+---------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -31.183 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.078     ; 32.103     ;
+; -31.157 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.079     ; 32.076     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.134 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.779     ;
+; -31.111 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[4]                   ; clk          ; clk         ; 1.000        ; -0.073     ; 32.036     ;
+; -31.110 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.078     ; 32.030     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.779     ;
+; -31.085 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[4]                   ; clk          ; clk         ; 1.000        ; -0.074     ; 32.009     ;
+; -31.068 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[5]                   ; clk          ; clk         ; 1.000        ; -0.076     ; 31.990     ;
+; -31.065 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[0]                   ; clk          ; clk         ; 1.000        ; -0.076     ; 31.987     ;
+; -31.055 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[1]                   ; clk          ; clk         ; 1.000        ; -0.073     ; 31.980     ;
+; -31.042 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[5]                   ; clk          ; clk         ; 1.000        ; -0.077     ; 31.963     ;
+; -31.039 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[0]                   ; clk          ; clk         ; 1.000        ; -0.077     ; 31.960     ;
+; -31.038 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[4]                   ; clk          ; clk         ; 1.000        ; -0.073     ; 31.963     ;
+; -31.029 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[1]                   ; clk          ; clk         ; 1.000        ; -0.074     ; 31.953     ;
+; -31.004 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[3]                   ; clk          ; clk         ; 1.000        ; -0.079     ; 31.923     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -31.000 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.645     ;
+; -30.997 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[2]                   ; clk          ; clk         ; 1.000        ; -0.079     ; 31.916     ;
+; -30.995 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[5]                   ; clk          ; clk         ; 1.000        ; -0.076     ; 31.917     ;
+; -30.992 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[0]                   ; clk          ; clk         ; 1.000        ; -0.076     ; 31.914     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[5]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[6]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.986 ; modularPowering:modularPowering_inst|base_reg[7]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.631     ;
+; -30.982 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[1]                   ; clk          ; clk         ; 1.000        ; -0.073     ; 31.907     ;
+; -30.978 ; modularPowering:modularPowering_inst|res[5]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.082     ; 31.894     ;
+; -30.978 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[3]                   ; clk          ; clk         ; 1.000        ; -0.080     ; 31.896     ;
+; -30.971 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[2]                   ; clk          ; clk         ; 1.000        ; -0.080     ; 31.889     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.951 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[2]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.645     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[0]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[1]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[2]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[3]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[4]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[5]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[6]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.948 ; modularPowering:modularPowering_inst|base_reg[7]              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_1 ; clk          ; clk         ; 1.000        ; -0.131     ; 31.593     ;
+; -30.946 ; modularPowering:modularPowering_inst|res[0]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.082     ; 31.862     ;
+; -30.944 ; modularPowering:modularPowering_inst|res[1]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk          ; clk         ; 1.000        ; -0.084     ; 31.858     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[5]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[6]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[7]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
+; -30.937 ; modularPowering:modularPowering_inst|base_reg[5]~_Duplicate_2 ; modularPowering:modularPowering_inst|base_reg[4]              ; clk          ; clk         ; 1.000        ; -0.082     ; 31.631     ;
++---------+---------------------------------------------------------------+---------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'state_reg.listening'                                                                                                                  ;
++--------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack  ; From Node                                         ; To Node           ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+; -3.234 ; received_first_stage[2]                           ; modPower_base[2]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.707     ; 0.726      ;
+; -2.913 ; random_generator:randomGenerator_inst|lfsr_reg[2] ; privateKey_reg[0] ; clk                 ; state_reg.listening ; 1.000        ; 0.123      ; 2.994      ;
+; -2.867 ; random_generator:randomGenerator_inst|lfsr_reg[3] ; privateKey_reg[1] ; clk                 ; state_reg.listening ; 1.000        ; 0.122      ; 3.080      ;
+; -2.775 ; received_first_stage[5]                           ; modPower_base[5]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.833     ; 0.896      ;
+; -2.712 ; random_generator:randomGenerator_inst|lfsr_reg[8] ; privateKey_reg[6] ; clk                 ; state_reg.listening ; 1.000        ; 0.129      ; 2.937      ;
+; -2.700 ; received_first_stage[0]                           ; modPower_base[0]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.782     ; 0.881      ;
+; -2.695 ; received_first_stage[4]                           ; modPower_base[4]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.785     ; 0.879      ;
+; -2.609 ; random_generator:randomGenerator_inst|lfsr_reg[6] ; privateKey_reg[4] ; clk                 ; state_reg.listening ; 1.000        ; 0.130      ; 2.865      ;
+; -2.597 ; received_first_stage[1]                           ; modPower_base[1]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.823     ; 0.742      ;
+; -2.596 ; random_generator:randomGenerator_inst|lfsr_reg[9] ; privateKey_reg[7] ; clk                 ; state_reg.listening ; 1.000        ; 0.128      ; 2.858      ;
+; -2.564 ; received_first_stage[3]                           ; modPower_base[3]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.778     ; 0.724      ;
+; -2.555 ; received_first_stage[7]                           ; modPower_base[7]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.782     ; 0.743      ;
+; -2.551 ; received_first_stage[6]                           ; modPower_base[6]  ; drone_rdy           ; state_reg.listening ; 1.000        ; -1.785     ; 0.727      ;
+; -2.478 ; state_reg.compute_key                             ; modPower_base[2]  ; clk                 ; state_reg.listening ; 0.500        ; 0.293      ; 1.470      ;
+; -2.446 ; random_generator:randomGenerator_inst|lfsr_reg[7] ; privateKey_reg[5] ; clk                 ; state_reg.listening ; 1.000        ; 0.129      ; 2.846      ;
+; -2.118 ; state_reg.compute_key                             ; modPower_base[5]  ; clk                 ; state_reg.listening ; 0.500        ; 0.168      ; 1.740      ;
+; -2.013 ; state_reg.compute_key                             ; modPower_base[3]  ; clk                 ; state_reg.listening ; 0.500        ; 0.167      ; 1.618      ;
+; -1.998 ; received_first_stage[2]                           ; modPower_base[2]  ; state_reg.listening ; state_reg.listening ; 0.500        ; 0.019      ; 0.726      ;
+; -1.881 ; state_reg.compute_key                             ; modPower_base[1]  ; clk                 ; state_reg.listening ; 0.500        ; 0.168      ; 1.517      ;
+; -1.707 ; state_reg.compute_key                             ; modPower_base[6]  ; clk                 ; state_reg.listening ; 0.500        ; 0.213      ; 1.381      ;
+; -1.694 ; state_reg.compute_key                             ; modPower_base[7]  ; clk                 ; state_reg.listening ; 0.500        ; 0.216      ; 1.380      ;
+; -1.539 ; received_first_stage[5]                           ; modPower_base[5]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.107     ; 0.896      ;
+; -1.467 ; state_reg.compute_key                             ; modPower_base[0]  ; clk                 ; state_reg.listening ; 0.500        ; 0.214      ; 1.144      ;
+; -1.464 ; received_first_stage[0]                           ; modPower_base[0]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.056     ; 0.881      ;
+; -1.459 ; received_first_stage[4]                           ; modPower_base[4]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.059     ; 0.879      ;
+; -1.425 ; state_reg.compute_key                             ; modPower_base[4]  ; clk                 ; state_reg.listening ; 0.500        ; 0.215      ; 1.109      ;
+; -1.361 ; received_first_stage[1]                           ; modPower_base[1]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.097     ; 0.742      ;
+; -1.328 ; received_first_stage[3]                           ; modPower_base[3]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.052     ; 0.724      ;
+; -1.319 ; received_first_stage[7]                           ; modPower_base[7]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.056     ; 0.743      ;
+; -1.315 ; received_first_stage[6]                           ; modPower_base[6]  ; state_reg.listening ; state_reg.listening ; 0.500        ; -0.059     ; 0.727      ;
+; -0.561 ; random_generator:randomGenerator_inst|lfsr_reg[4] ; privateKey_reg[2] ; clk                 ; state_reg.listening ; 1.000        ; 0.123      ; 0.641      ;
+; -0.423 ; random_generator:randomGenerator_inst|lfsr_reg[5] ; privateKey_reg[3] ; clk                 ; state_reg.listening ; 1.000        ; 0.120      ; 0.641      ;
++--------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'drone_rdy'                                                                                                             ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -1.742 ; random_generator:randomGenerator_inst|lfsr_reg[2] ; privateKey_reg[0] ; clk          ; drone_rdy   ; 0.500        ; 1.804      ; 2.994      ;
+; -1.696 ; random_generator:randomGenerator_inst|lfsr_reg[3] ; privateKey_reg[1] ; clk          ; drone_rdy   ; 0.500        ; 1.803      ; 3.080      ;
+; -1.541 ; random_generator:randomGenerator_inst|lfsr_reg[8] ; privateKey_reg[6] ; clk          ; drone_rdy   ; 0.500        ; 1.810      ; 2.937      ;
+; -1.438 ; random_generator:randomGenerator_inst|lfsr_reg[6] ; privateKey_reg[4] ; clk          ; drone_rdy   ; 0.500        ; 1.811      ; 2.865      ;
+; -1.425 ; random_generator:randomGenerator_inst|lfsr_reg[9] ; privateKey_reg[7] ; clk          ; drone_rdy   ; 0.500        ; 1.809      ; 2.858      ;
+; -1.275 ; random_generator:randomGenerator_inst|lfsr_reg[7] ; privateKey_reg[5] ; clk          ; drone_rdy   ; 0.500        ; 1.810      ; 2.846      ;
+; 0.610  ; random_generator:randomGenerator_inst|lfsr_reg[4] ; privateKey_reg[2] ; clk          ; drone_rdy   ; 0.500        ; 1.804      ; 0.641      ;
+; 0.748  ; random_generator:randomGenerator_inst|lfsr_reg[5] ; privateKey_reg[3] ; clk          ; drone_rdy   ; 0.500        ; 1.801      ; 0.641      ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'drone_rdy'                                                                                                              ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -1.041 ; random_generator:randomGenerator_inst|lfsr_reg[4] ; privateKey_reg[2] ; clk          ; drone_rdy   ; -0.500       ; 2.094      ; 0.593      ;
+; -1.038 ; random_generator:randomGenerator_inst|lfsr_reg[5] ; privateKey_reg[3] ; clk          ; drone_rdy   ; -0.500       ; 2.091      ; 0.593      ;
+; 1.071  ; random_generator:randomGenerator_inst|lfsr_reg[7] ; privateKey_reg[5] ; clk          ; drone_rdy   ; -0.500       ; 2.101      ; 2.712      ;
+; 1.077  ; random_generator:randomGenerator_inst|lfsr_reg[9] ; privateKey_reg[7] ; clk          ; drone_rdy   ; -0.500       ; 2.099      ; 2.716      ;
+; 1.077  ; random_generator:randomGenerator_inst|lfsr_reg[6] ; privateKey_reg[4] ; clk          ; drone_rdy   ; -0.500       ; 2.102      ; 2.719      ;
+; 1.176  ; random_generator:randomGenerator_inst|lfsr_reg[8] ; privateKey_reg[6] ; clk          ; drone_rdy   ; -0.500       ; 2.101      ; 2.817      ;
+; 1.193  ; random_generator:randomGenerator_inst|lfsr_reg[2] ; privateKey_reg[0] ; clk          ; drone_rdy   ; -0.500       ; 2.094      ; 2.827      ;
+; 1.268  ; random_generator:randomGenerator_inst|lfsr_reg[3] ; privateKey_reg[1] ; clk          ; drone_rdy   ; -0.500       ; 2.093      ; 2.901      ;
++--------+---------------------------------------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'state_reg.listening'                                                                                                                  ;
++-------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node           ; Launch Clock        ; Latch Clock         ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+; 0.195 ; random_generator:randomGenerator_inst|lfsr_reg[4] ; privateKey_reg[2] ; clk                 ; state_reg.listening ; 0.000        ; 0.368      ; 0.593      ;
+; 0.198 ; random_generator:randomGenerator_inst|lfsr_reg[5] ; privateKey_reg[3] ; clk                 ; state_reg.listening ; 0.000        ; 0.365      ; 0.593      ;
+; 0.869 ; received_first_stage[2]                           ; modPower_base[2]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.300      ; 0.689      ;
+; 0.952 ; received_first_stage[3]                           ; modPower_base[3]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.214      ; 0.686      ;
+; 0.959 ; received_first_stage[6]                           ; modPower_base[6]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.211      ; 0.690      ;
+; 0.966 ; received_first_stage[7]                           ; modPower_base[7]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.214      ; 0.700      ;
+; 1.009 ; received_first_stage[1]                           ; modPower_base[1]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.171      ; 0.700      ;
+; 1.011 ; state_reg.compute_key                             ; modPower_base[0]  ; clk                 ; state_reg.listening ; -0.500       ; 0.462      ; 1.003      ;
+; 1.030 ; state_reg.compute_key                             ; modPower_base[4]  ; clk                 ; state_reg.listening ; -0.500       ; 0.463      ; 1.023      ;
+; 1.089 ; received_first_stage[0]                           ; modPower_base[0]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.214      ; 0.823      ;
+; 1.091 ; received_first_stage[4]                           ; modPower_base[4]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.211      ; 0.822      ;
+; 1.150 ; received_first_stage[5]                           ; modPower_base[5]  ; state_reg.listening ; state_reg.listening ; -0.500       ; 0.162      ; 0.832      ;
+; 1.207 ; state_reg.compute_key                             ; modPower_base[2]  ; clk                 ; state_reg.listening ; -0.500       ; 0.552      ; 1.289      ;
+; 1.238 ; state_reg.compute_key                             ; modPower_base[7]  ; clk                 ; state_reg.listening ; -0.500       ; 0.464      ; 1.232      ;
+; 1.242 ; state_reg.compute_key                             ; modPower_base[6]  ; clk                 ; state_reg.listening ; -0.500       ; 0.461      ; 1.233      ;
+; 1.467 ; state_reg.compute_key                             ; modPower_base[1]  ; clk                 ; state_reg.listening ; -0.500       ; 0.414      ; 1.411      ;
+; 1.603 ; state_reg.compute_key                             ; modPower_base[3]  ; clk                 ; state_reg.listening ; -0.500       ; 0.414      ; 1.547      ;
+; 1.679 ; state_reg.compute_key                             ; modPower_base[5]  ; clk                 ; state_reg.listening ; -0.500       ; 0.415      ; 1.624      ;
+; 2.040 ; received_first_stage[2]                           ; modPower_base[2]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.381     ; 0.689      ;
+; 2.123 ; received_first_stage[3]                           ; modPower_base[3]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.467     ; 0.686      ;
+; 2.130 ; received_first_stage[6]                           ; modPower_base[6]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.470     ; 0.690      ;
+; 2.137 ; received_first_stage[7]                           ; modPower_base[7]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.467     ; 0.700      ;
+; 2.180 ; received_first_stage[1]                           ; modPower_base[1]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.510     ; 0.700      ;
+; 2.260 ; received_first_stage[0]                           ; modPower_base[0]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.467     ; 0.823      ;
+; 2.262 ; received_first_stage[4]                           ; modPower_base[4]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.470     ; 0.822      ;
+; 2.307 ; random_generator:randomGenerator_inst|lfsr_reg[7] ; privateKey_reg[5] ; clk                 ; state_reg.listening ; 0.000        ; 0.375      ; 2.712      ;
+; 2.313 ; random_generator:randomGenerator_inst|lfsr_reg[9] ; privateKey_reg[7] ; clk                 ; state_reg.listening ; 0.000        ; 0.373      ; 2.716      ;
+; 2.313 ; random_generator:randomGenerator_inst|lfsr_reg[6] ; privateKey_reg[4] ; clk                 ; state_reg.listening ; 0.000        ; 0.376      ; 2.719      ;
+; 2.321 ; received_first_stage[5]                           ; modPower_base[5]  ; drone_rdy           ; state_reg.listening ; 0.000        ; -1.519     ; 0.832      ;
+; 2.412 ; random_generator:randomGenerator_inst|lfsr_reg[8] ; privateKey_reg[6] ; clk                 ; state_reg.listening ; 0.000        ; 0.375      ; 2.817      ;
+; 2.429 ; random_generator:randomGenerator_inst|lfsr_reg[2] ; privateKey_reg[0] ; clk                 ; state_reg.listening ; 0.000        ; 0.368      ; 2.827      ;
+; 2.504 ; random_generator:randomGenerator_inst|lfsr_reg[3] ; privateKey_reg[1] ; clk                 ; state_reg.listening ; 0.000        ; 0.367      ; 2.901      ;
++-------+---------------------------------------------------+-------------------+---------------------+---------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                                                                                                                  ;
++-------+---------------------------------------------------------------+---------------------------------------------------------------+---------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                     ; To Node                                                       ; Launch Clock        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------------+---------------------------------------------------------------+---------------------+-------------+--------------+------------+------------+
+; 0.403 ; modularPowering:modularPowering_inst|exp_reg[7]               ; modularPowering:modularPowering_inst|exp_reg[7]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.669      ;
+; 0.404 ; modularPowering:modularPowering_inst|res[7]                   ; modularPowering:modularPowering_inst|res[7]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; modularPowering:modularPowering_inst|res[6]                   ; modularPowering:modularPowering_inst|res[6]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; modularPowering:modularPowering_inst|res[4]                   ; modularPowering:modularPowering_inst|res[4]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 0.669      ;
+; 0.408 ; modularPowering:modularPowering_inst|state_reg.check          ; modularPowering:modularPowering_inst|state_reg.check          ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.674      ;
+; 0.422 ; random_generator:randomGenerator_inst|lfsr_reg[11]            ; random_generator:randomGenerator_inst|lfsr_reg[12]            ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.688      ;
+; 0.428 ; random_generator:randomGenerator_inst|lfsr_reg[1]             ; random_generator:randomGenerator_inst|lfsr_reg[0]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.694      ;
+; 0.428 ; random_generator:randomGenerator_inst|lfsr_reg[1]             ; random_generator:randomGenerator_inst|lfsr_reg[2]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.694      ;
+; 0.435 ; modularPowering:modularPowering_inst|state_reg.idle           ; modularPowering:modularPowering_inst|state_reg.init           ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.701      ;
+; 0.436 ; modularPowering:modularPowering_inst|exp_reg[7]               ; modularPowering:modularPowering_inst|exp_reg[6]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.702      ;
+; 0.439 ; modularPowering:modularPowering_inst|exp_reg[1]               ; modularPowering:modularPowering_inst|exp_reg[0]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.705      ;
+; 0.443 ; random_generator:randomGenerator_inst|lfsr_reg[2]             ; random_generator:randomGenerator_inst|lfsr_reg[3]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.709      ;
+; 0.444 ; random_generator:randomGenerator_inst|lfsr_reg[8]             ; random_generator:randomGenerator_inst|lfsr_reg[9]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.710      ;
+; 0.444 ; modularPowering:modularPowering_inst|state_reg.idle           ; modularPowering:modularPowering_inst|state_reg.check          ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.710      ;
+; 0.455 ; modularPowering:modularPowering_inst|exp_reg[2]               ; modularPowering:modularPowering_inst|exp_reg[1]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.721      ;
+; 0.489 ; privateKey_reg[5]                                             ; modularPowering:modularPowering_inst|exp_reg[5]               ; state_reg.listening ; clk         ; 0.000        ; -0.129     ; 0.576      ;
+; 0.543 ; random_generator:randomGenerator_inst|lfsr_reg[12]            ; random_generator:randomGenerator_inst|lfsr_reg[0]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.809      ;
+; 0.560 ; privateKey_reg[6]                                             ; modularPowering:modularPowering_inst|exp_reg[6]               ; state_reg.listening ; clk         ; 0.000        ; -0.129     ; 0.647      ;
+; 0.561 ; modularPowering:modularPowering_inst|state_reg.check          ; modularPowering:modularPowering_inst|state_reg.idle           ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.827      ;
+; 0.567 ; modularPowering:modularPowering_inst|state_reg.check          ; modularPowering:modularPowering_inst|rdy                      ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.833      ;
+; 0.572 ; modularPowering:modularPowering_inst|state_reg.check          ; modularPowering:modularPowering_inst|state_reg.operations     ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.838      ;
+; 0.575 ; privateKey_reg[4]                                             ; modularPowering:modularPowering_inst|exp_reg[4]               ; state_reg.listening ; clk         ; 0.000        ; -0.130     ; 0.661      ;
+; 0.586 ; random_generator:randomGenerator_inst|lfsr_reg[6]             ; random_generator:randomGenerator_inst|lfsr_reg[7]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.852      ;
+; 0.601 ; random_generator:randomGenerator_inst|lfsr_reg[10]            ; random_generator:randomGenerator_inst|lfsr_reg[11]            ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.867      ;
+; 0.602 ; modularPowering:modularPowering_inst|exp_reg[5]               ; modularPowering:modularPowering_inst|exp_reg[4]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.868      ;
+; 0.610 ; random_generator:randomGenerator_inst|lfsr_reg[4]             ; random_generator:randomGenerator_inst|lfsr_reg[5]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.876      ;
+; 0.611 ; privateKey_reg[2]                                             ; modularPowering:modularPowering_inst|exp_reg[2]               ; state_reg.listening ; clk         ; 0.000        ; -0.123     ; 0.704      ;
+; 0.618 ; privateKey_reg[0]                                             ; modularPowering:modularPowering_inst|exp_reg[0]               ; state_reg.listening ; clk         ; 0.000        ; -0.123     ; 0.711      ;
+; 0.625 ; privateKey_reg[1]                                             ; modularPowering:modularPowering_inst|exp_reg[1]               ; state_reg.listening ; clk         ; 0.000        ; -0.122     ; 0.719      ;
+; 0.626 ; random_generator:randomGenerator_inst|lfsr_reg[7]             ; random_generator:randomGenerator_inst|lfsr_reg[8]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.892      ;
+; 0.629 ; privateKey_reg[3]                                             ; modularPowering:modularPowering_inst|exp_reg[3]               ; state_reg.listening ; clk         ; 0.000        ; -0.120     ; 0.725      ;
+; 0.632 ; random_generator:randomGenerator_inst|lfsr_reg[3]             ; random_generator:randomGenerator_inst|lfsr_reg[4]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.898      ;
+; 0.647 ; modularPowering:modularPowering_inst|exp_reg[3]               ; modularPowering:modularPowering_inst|exp_reg[2]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.913      ;
+; 0.650 ; random_generator:randomGenerator_inst|lfsr_reg[4]             ; random_generator:randomGenerator_inst|lfsr_reg[0]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.916      ;
+; 0.665 ; random_generator:randomGenerator_inst|lfsr_reg[3]             ; random_generator:randomGenerator_inst|lfsr_reg[0]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 0.931      ;
+; 0.710 ; privateKey_reg[7]                                             ; modularPowering:modularPowering_inst|exp_reg[7]               ; state_reg.listening ; clk         ; 0.000        ; -0.128     ; 0.798      ;
+; 0.764 ; state_reg.compute_second_stage                                ; modularPowering:modularPowering_inst|state_reg.init           ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.030      ;
+; 0.812 ; modularPowering:modularPowering_inst|exp_reg[6]               ; modularPowering:modularPowering_inst|exp_reg[5]               ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.078      ;
+; 0.848 ; random_generator:randomGenerator_inst|lfsr_reg[0]             ; random_generator:randomGenerator_inst|lfsr_reg[1]             ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.114      ;
+; 0.867 ; random_generator:randomGenerator_inst|lfsr_reg[5]             ; random_generator:randomGenerator_inst|lfsr_reg[6]             ; clk                 ; clk         ; 0.000        ; 0.091      ; 1.144      ;
+; 0.869 ; state_reg.listening                                           ; state_reg.compute_second_stage                                ; state_reg.listening ; clk         ; 0.000        ; 3.071      ; 4.388      ;
+; 0.948 ; modularPowering:modularPowering_inst|exp_reg[4]               ; modularPowering:modularPowering_inst|exp_reg[3]               ; clk                 ; clk         ; 0.000        ; 0.069      ; 1.203      ;
+; 0.955 ; random_generator:randomGenerator_inst|lfsr_reg[9]             ; random_generator:randomGenerator_inst|lfsr_reg[10]            ; clk                 ; clk         ; 0.000        ; 0.069      ; 1.210      ;
+; 0.958 ; state_reg.listening                                           ; modularPowering:modularPowering_inst|state_reg.idle           ; state_reg.listening ; clk         ; 0.000        ; 3.071      ; 4.477      ;
+; 1.001 ; modularPowering:modularPowering_inst|res[2]                   ; modularPowering:modularPowering_inst|res[2]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 1.266      ;
+; 1.001 ; state_reg.listening                                           ; modularPowering:modularPowering_inst|state_reg.init           ; state_reg.listening ; clk         ; 0.000        ; 3.071      ; 4.520      ;
+; 1.107 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[4]                   ; clk                 ; clk         ; 0.000        ; 0.078      ; 1.371      ;
+; 1.119 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.096      ; 1.401      ;
+; 1.246 ; modularPowering:modularPowering_inst|res[1]                   ; modularPowering:modularPowering_inst|res[1]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 1.511      ;
+; 1.264 ; state_reg.listening                                           ; state_reg.listening                                           ; state_reg.listening ; clk         ; 0.000        ; 3.088      ; 4.800      ;
+; 1.282 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[6]                   ; clk                 ; clk         ; 0.000        ; 0.073      ; 1.541      ;
+; 1.287 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[7]                   ; clk                 ; clk         ; 0.000        ; 0.073      ; 1.546      ;
+; 1.288 ; modularPowering:modularPowering_inst|res[3]                   ; modularPowering:modularPowering_inst|res[3]                   ; clk                 ; clk         ; 0.000        ; 0.079      ; 1.553      ;
+; 1.429 ; state_reg.listening                                           ; state_reg.compute_second_stage                                ; state_reg.listening ; clk         ; -0.500       ; 3.071      ; 4.448      ;
+; 1.445 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|exp_reg[4]               ; clk                 ; clk         ; 0.000        ; 0.070      ; 1.701      ;
+; 1.446 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|exp_reg[6]               ; clk                 ; clk         ; 0.000        ; 0.070      ; 1.702      ;
+; 1.464 ; state_reg.listening                                           ; modularPowering:modularPowering_inst|state_reg.idle           ; state_reg.listening ; clk         ; -0.500       ; 3.071      ; 4.483      ;
+; 1.499 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|exp_reg[7]               ; clk                 ; clk         ; 0.000        ; 0.070      ; 1.755      ;
+; 1.506 ; modPower_base[5]                                              ; modularPowering:modularPowering_inst|base_reg[5]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; 0.247      ; 1.469      ;
+; 1.507 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[1]                   ; clk                 ; clk         ; 0.000        ; 0.078      ; 1.771      ;
+; 1.547 ; state_reg.listening                                           ; modularPowering:modularPowering_inst|state_reg.init           ; state_reg.listening ; clk         ; -0.500       ; 3.071      ; 4.566      ;
+; 1.597 ; modularPowering:modularPowering_inst|res[5]                   ; modularPowering:modularPowering_inst|res[5]                   ; clk                 ; clk         ; 0.000        ; 0.080      ; 1.863      ;
+; 1.635 ; drone_rdy                                                     ; modularPowering:modularPowering_inst|state_reg.idle           ; drone_rdy           ; clk         ; 0.000        ; 3.071      ; 4.932      ;
+; 1.637 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|exp_reg[5]               ; clk                 ; clk         ; 0.000        ; 0.070      ; 1.893      ;
+; 1.689 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[5]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.484      ; 2.359      ;
+; 1.689 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[2]                   ; clk                 ; clk         ; 0.000        ; 0.072      ; 1.947      ;
+; 1.692 ; modPower_base[0]                                              ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; 0.201      ; 1.609      ;
+; 1.705 ; state_reg.listening                                           ; state_reg.listening                                           ; state_reg.listening ; clk         ; -0.500       ; 3.088      ; 4.741      ;
+; 1.709 ; modularPowering:modularPowering_inst|state_reg.init           ; modularPowering:modularPowering_inst|exp_reg[7]               ; clk                 ; clk         ; 0.000        ; 0.070      ; 1.965      ;
+; 1.749 ; modPower_base[3]                                              ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; 0.248      ; 1.713      ;
+; 1.752 ; modularPowering:modularPowering_inst|state_reg.idle           ; modularPowering:modularPowering_inst|state_reg.idle           ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.018      ;
+; 1.759 ; modularPowering:modularPowering_inst|rdy                      ; state_reg.compute_key                                         ; clk                 ; clk         ; 0.000        ; 0.069      ; 2.014      ;
+; 1.776 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[0]                   ; clk                 ; clk         ; 0.000        ; 0.076      ; 2.038      ;
+; 1.778 ; modPower_base[7]                                              ; modularPowering:modularPowering_inst|base_reg[7]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; 0.199      ; 1.693      ;
+; 1.781 ; drone_rdy                                                     ; modularPowering:modularPowering_inst|state_reg.init           ; drone_rdy           ; clk         ; 0.000        ; 3.071      ; 5.078      ;
+; 1.821 ; modPower_base[4]                                              ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; 0.200      ; 1.737      ;
+; 1.849 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[7]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.484      ; 2.519      ;
+; 1.858 ; state_reg.compute_second_stage                                ; modularPowering:modularPowering_inst|state_reg.idle           ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.124      ;
+; 1.879 ; drone_rdy                                                     ; state_reg.compute_second_stage                                ; drone_rdy           ; clk         ; 0.000        ; 3.071      ; 5.176      ;
+; 1.895 ; modularPowering:modularPowering_inst|res[0]                   ; modularPowering:modularPowering_inst|res[0]                   ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.161      ;
+; 1.913 ; state_reg.compute_second_stage                                ; state_reg.compute_key                                         ; clk                 ; clk         ; 0.000        ; 0.069      ; 2.168      ;
+; 1.918 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.096      ; 2.200      ;
+; 1.940 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|res[1]                   ; clk                 ; clk         ; 0.000        ; 0.057      ; 2.183      ;
+; 1.940 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|res[4]                   ; clk                 ; clk         ; 0.000        ; 0.057      ; 2.183      ;
+; 1.971 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.484      ; 2.641      ;
+; 1.973 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.484      ; 2.643      ;
+; 1.986 ; drone_rdy                                                     ; state_reg.listening                                           ; drone_rdy           ; clk         ; 0.000        ; 3.088      ; 5.300      ;
+; 1.990 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|res[0]                   ; clk                 ; clk         ; 0.000        ; 0.055      ; 2.231      ;
+; 1.991 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.067      ; 2.244      ;
+; 2.031 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[3]                   ; clk                 ; clk         ; 0.000        ; 0.072      ; 2.289      ;
+; 2.037 ; modularPowering:modularPowering_inst|state_reg.init           ; modularPowering:modularPowering_inst|res[1]                   ; clk                 ; clk         ; 0.000        ; 0.057      ; 2.280      ;
+; 2.056 ; modularPowering:modularPowering_inst|base_reg[0]~_Duplicate_3 ; modularPowering:modularPowering_inst|base_reg[3]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.096      ; 2.338      ;
+; 2.079 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[6]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.067      ; 2.332      ;
+; 2.080 ; modularPowering:modularPowering_inst|rdy                      ; modularPowering:modularPowering_inst|state_reg.idle           ; clk                 ; clk         ; 0.000        ; 0.080      ; 2.346      ;
+; 2.101 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[4]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.484      ; 2.771      ;
+; 2.117 ; modularPowering:modularPowering_inst|exp_reg[0]               ; modularPowering:modularPowering_inst|res[5]                   ; clk                 ; clk         ; 0.000        ; 0.076      ; 2.379      ;
+; 2.117 ; modPower_base[1]                                              ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; -0.174     ; 1.659      ;
+; 2.131 ; modPower_base[6]                                              ; modularPowering:modularPowering_inst|base_reg[6]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; -0.215     ; 1.632      ;
+; 2.133 ; modularPowering:modularPowering_inst|state_reg.operations     ; modularPowering:modularPowering_inst|base_reg[1]~_Duplicate_3 ; clk                 ; clk         ; 0.000        ; 0.063      ; 2.382      ;
+; 2.133 ; modPower_base[2]                                              ; modularPowering:modularPowering_inst|base_reg[2]~_Duplicate_3 ; state_reg.listening ; clk         ; -0.500       ; -0.295     ; 1.554      ;
++-------+---------------------------------------------------------------+---------------------------------------------------------------+---------------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
