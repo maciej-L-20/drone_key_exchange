@@ -15,10 +15,11 @@ mess_input[4] => Selector7.IN1
 mess_input[5] => Selector6.IN1
 mess_input[6] => Selector5.IN1
 mess_input[7] => Selector4.IN1
-received => Selector12.IN1
+received => Selector13.IN1
 received => Selector2.IN2
 received => Selector1.IN1
 init => Selector12.IN2
+init => Selector13.IN2
 init => privateKey_reg[0].IN0
 init => Selector1.IN2
 init => Selector0.IN1
@@ -51,7 +52,7 @@ key[4] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[5] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[6] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[7] <= key.DB_MAX_OUTPUT_PORT_TYPE
-key_rdy <= key.DB_MAX_OUTPUT_PORT_TYPE
+key_rdy <= key_rdy.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |talk_simulation|drone:drone1|modularPowering:modularPowering_inst
@@ -227,10 +228,11 @@ mess_input[4] => Selector7.IN1
 mess_input[5] => Selector6.IN1
 mess_input[6] => Selector5.IN1
 mess_input[7] => Selector4.IN1
-received => Selector12.IN1
+received => Selector13.IN1
 received => Selector2.IN2
 received => Selector1.IN1
 init => Selector12.IN2
+init => Selector13.IN2
 init => privateKey_reg[0].IN0
 init => Selector1.IN2
 init => Selector0.IN1
@@ -263,7 +265,7 @@ key[4] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[5] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[6] <= key.DB_MAX_OUTPUT_PORT_TYPE
 key[7] <= key.DB_MAX_OUTPUT_PORT_TYPE
-key_rdy <= key.DB_MAX_OUTPUT_PORT_TYPE
+key_rdy <= key_rdy.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |talk_simulation|drone:drone2|modularPowering:modularPowering_inst

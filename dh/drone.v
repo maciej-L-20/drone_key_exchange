@@ -60,13 +60,15 @@ reg [size-1:0] state_reg,state_next;
 			send_mess: 
 			if(received)
 				begin
-					wait_for_cc = 1'b0;
 					modPower_base = mess_input;
 					state_next = compute_key;
 				end
 			else state_next = send_mess;
 			
-			compute_key:	if(!key_rdy) state_next = compute_key;
+			compute_key:	if(!key_rdy) begin
+								state_next = compute_key;
+								wait_for_cc = 1'b0;
+								end
 								else state_next = idle;
 								
 			default: state_next = idle;

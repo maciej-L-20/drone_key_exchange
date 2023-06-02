@@ -1,5 +1,5 @@
 Fitter report for dh
-Fri Jun 02 16:36:47 2023
+Fri Jun 02 21:26:29 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 02 16:36:47 2023       ;
+; Fitter Status                      ; Successful - Fri Jun 02 21:26:29 2023       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; dh                                          ;
 ; Top-level Entity Name              ; talk_simulation                             ;
@@ -1403,9 +1403,9 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file F:/SYCY/sycy_23l_projekt/dh/output_files/dh.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5671 megabytes
-    Info: Processing ended: Fri Jun 02 16:36:47 2023
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 5670 megabytes
+    Info: Processing ended: Fri Jun 02 21:26:29 2023
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:13
 
 

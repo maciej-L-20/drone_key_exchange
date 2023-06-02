@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dF:/SYCY/sycy_23l_projekt/dh/simulation/modelsim
 vcc
-Z1 !s110 1685716631
+Z1 !s110 1685734007
 !i10b 1
 !s100 cQgc[XAn@B8mL<9iFdD4C0
 IKBOcV60aH5KkSl7?TR]E?3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1685716631.000000
+Z4 !s108 1685734007.000000
 !s107 F:/SYCY/sycy_23l_projekt/dh/cc.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/cc.v|
 !i113 1
@@ -33,11 +33,11 @@ Z7 tCvgOpt 0
 vdrone
 R1
 !i10b 1
-!s100 m35@nVI0bZ[PgMObW_@R]2
-I:F=UOIVPoo9U3W_<E^IjD2
+!s100 E21eaoRPAff70caR=b[[a2
+IhgVfLoYY^3A7zP1gVYzYS2
 R2
 R0
-w1685714979
+w1685733838
 8F:/SYCY/sycy_23l_projekt/dh/drone.v
 FF:/SYCY/sycy_23l_projekt/dh/drone.v
 L0 1
