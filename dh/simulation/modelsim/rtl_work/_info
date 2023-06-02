@@ -8,26 +8,114 @@ z2
 !i10f 100
 cModel Technology
 Z0 dF:/SYCY/sycy_23l_projekt/dh/simulation/modelsim
+vcc
+Z1 !s110 1685716631
+!i10b 1
+!s100 cQgc[XAn@B8mL<9iFdD4C0
+IKBOcV60aH5KkSl7?TR]E?3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1685713177
+8F:/SYCY/sycy_23l_projekt/dh/cc.v
+FF:/SYCY/sycy_23l_projekt/dh/cc.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1685716631.000000
+!s107 F:/SYCY/sycy_23l_projekt/dh/cc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/cc.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh
+Z7 tCvgOpt 0
+vdrone
+R1
+!i10b 1
+!s100 m35@nVI0bZ[PgMObW_@R]2
+I:F=UOIVPoo9U3W_<E^IjD2
+R2
+R0
+w1685714979
+8F:/SYCY/sycy_23l_projekt/dh/drone.v
+FF:/SYCY/sycy_23l_projekt/dh/drone.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 F:/SYCY/sycy_23l_projekt/dh/drone.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/drone.v|
+!i113 1
+R5
+R6
+R7
 vmodularPowering
-!s110 1684842632
+R1
 !i10b 1
 !s100 9Y0[m5OcKYC@fgmMJmNE51
 I<UYc9G:hbFY^TjPWk@62k1
-VDg1SIo80bB@j0V0VzS_@n1
+R2
 R0
 w1684842063
 8F:/SYCY/sycy_23l_projekt/dh/modularPowering.v
 FF:/SYCY/sycy_23l_projekt/dh/modularPowering.v
 L0 1
-OV;L;10.5b;63
+R3
 r1
 !s85 0
 31
-!s108 1684842632.000000
+R4
 !s107 F:/SYCY/sycy_23l_projekt/dh/modularPowering.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/modularPowering.v|
 !i113 1
-o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh
-tCvgOpt 0
+R5
+R6
+R7
 nmodular@powering
+vrandom_generator
+R1
+!i10b 1
+!s100 klKIIgDcE27<EIIKAd>?[2
+I3Ekce`HDH<0Z[_B81l88T1
+R2
+R0
+w1684841968
+8F:/SYCY/sycy_23l_projekt/dh/random_generator.v
+FF:/SYCY/sycy_23l_projekt/dh/random_generator.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 F:/SYCY/sycy_23l_projekt/dh/random_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/random_generator.v|
+!i113 1
+R5
+R6
+R7
+vtalk_simulation
+R1
+!i10b 1
+!s100 j`6X412U88F?4MVUb8ClN3
+I>=YWHLzNjNB6QMTTnfk5:1
+R2
+R0
+w1685715693
+8F:/SYCY/sycy_23l_projekt/dh/talk_simulation.v
+FF:/SYCY/sycy_23l_projekt/dh/talk_simulation.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 F:/SYCY/sycy_23l_projekt/dh/talk_simulation.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+F:/SYCY/sycy_23l_projekt/dh|F:/SYCY/sycy_23l_projekt/dh/talk_simulation.v|
+!i113 1
+R5
+R6
+R7

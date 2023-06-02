@@ -1,18 +1,44 @@
 
-State Machine - |cc|state_reg
+State Machine - |talk_simulation|cc:cc_inst|state_reg
 Name state_reg.listening state_reg.compute_key state_reg.compute_second_stage 
 state_reg.listening 0 0 0 
 state_reg.compute_second_stage 1 0 1 
 state_reg.compute_key 1 1 0 
 
-State Machine - |cc|modularPowering:modularPowering_inst_drone2|state_reg
+State Machine - |talk_simulation|cc:cc_inst|modularPowering:modularPowering_inst_drone2|state_reg
 Name state_reg.operations state_reg.check state_reg.init state_reg.idle 
 state_reg.idle 0 0 0 0 
 state_reg.init 0 0 1 1 
 state_reg.check 0 1 0 1 
 state_reg.operations 1 0 0 1 
 
-State Machine - |cc|modularPowering:modularPowering_inst_drone1|state_reg
+State Machine - |talk_simulation|cc:cc_inst|modularPowering:modularPowering_inst_drone1|state_reg
+Name state_reg.operations state_reg.check state_reg.init state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.init 0 0 1 1 
+state_reg.check 0 1 0 1 
+state_reg.operations 1 0 0 1 
+
+State Machine - |talk_simulation|drone:drone2|state_reg
+Name state_reg.idle state_reg.compute_key state_reg.send_mess 
+state_reg.idle 0 0 0 
+state_reg.send_mess 1 0 1 
+state_reg.compute_key 1 1 0 
+
+State Machine - |talk_simulation|drone:drone2|modularPowering:modularPowering_inst|state_reg
+Name state_reg.operations state_reg.check state_reg.init state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.init 0 0 1 1 
+state_reg.check 0 1 0 1 
+state_reg.operations 1 0 0 1 
+
+State Machine - |talk_simulation|drone:drone1|state_reg
+Name state_reg.idle state_reg.compute_key state_reg.send_mess 
+state_reg.idle 0 0 0 
+state_reg.send_mess 1 0 1 
+state_reg.compute_key 1 1 0 
+
+State Machine - |talk_simulation|drone:drone1|modularPowering:modularPowering_inst|state_reg
 Name state_reg.operations state_reg.check state_reg.init state_reg.idle 
 state_reg.idle 0 0 0 0 
 state_reg.init 0 0 1 1 

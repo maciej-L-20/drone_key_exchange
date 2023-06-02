@@ -11,38 +11,77 @@
 # Copying F:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh {F:/SYCY/sycy_23l_projekt/dh/cc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:37:11 on Jun 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/sycy_23l_projekt/dh" F:/SYCY/sycy_23l_projekt/dh/cc.v 
+# -- Compiling module cc
+# 
+# Top level modules:
+# 	cc
+# End time: 16:37:11 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh {F:/SYCY/sycy_23l_projekt/dh/drone.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:37:11 on Jun 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/sycy_23l_projekt/dh" F:/SYCY/sycy_23l_projekt/dh/drone.v 
+# -- Compiling module drone
+# 
+# Top level modules:
+# 	drone
+# End time: 16:37:11 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh {F:/SYCY/sycy_23l_projekt/dh/random_generator.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:37:11 on Jun 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/sycy_23l_projekt/dh" F:/SYCY/sycy_23l_projekt/dh/random_generator.v 
+# -- Compiling module random_generator
+# 
+# Top level modules:
+# 	random_generator
+# End time: 16:37:11 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh {F:/SYCY/sycy_23l_projekt/dh/modularPowering.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:32 on May 23,2023
+# Start time: 16:37:11 on Jun 02,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/sycy_23l_projekt/dh" F:/SYCY/sycy_23l_projekt/dh/modularPowering.v 
 # -- Compiling module modularPowering
 # 
 # Top level modules:
 # 	modularPowering
-# End time: 13:50:32 on May 23,2023, Elapsed time: 0:00:00
+# End time: 16:37:11 on Jun 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+F:/SYCY/sycy_23l_projekt/dh {F:/SYCY/sycy_23l_projekt/dh/talk_simulation.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:37:11 on Jun 02,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+F:/SYCY/sycy_23l_projekt/dh" F:/SYCY/sycy_23l_projekt/dh/talk_simulation.v 
+# -- Compiling module talk_simulation
+# 
+# Top level modules:
+# 	talk_simulation
+# End time: 16:37:11 on Jun 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.modularPowering
-# vsim work.modularPowering 
-# Start time: 13:50:35 on May 23,2023
+vsim work.cc
+# vsim work.cc 
+# Start time: 16:37:16 on Jun 02,2023
+# Loading work.cc
 # Loading work.modularPowering
-do test_modExp.do
-do test_modExp.do
-do test_modExp.do
-do test_modExp.do
-# ** Error: Invalid binary digit: 5.
-# ** Error: (vsim-4011) Invalid force value: 2#5 0,10#0 80.
-# Error in macro ./test_modExp.do line 7
-# Invalid binary digit: 5.
-# ** Error: (vsim-4011) Invalid force value: 2#5 0,10#0 80.
-# 
-#     while executing
-# "force base 2#5 0,10#0 80"
-do test_modExp.do
-do test_modExp.do
-do test_m
-# Cannot open macro file: test_m
-do test_modExp.do
-do test_modExp.do
-# End time: 13:55:47 on May 23,2023, Elapsed time: 0:05:12
-# Errors: 3, Warnings: 0
+# Loading work.random_generator
+vsim work.talk_simulation
+# End time: 16:37:24 on Jun 02,2023, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 0
+# vsim work.talk_simulation 
+# Start time: 16:37:24 on Jun 02,2023
+# Loading work.talk_simulation
+# Loading work.drone
+# Loading work.modularPowering
+# Loading work.random_generator
+# Loading work.cc
+# WARNING: No extended dataflow license exists
+do simulation.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: lipsk  Hostname: DESKTOP-1NP3UPT  ProcessID: 6816
+#           Attempting to use alternate WLF file "./wlftrhb4em".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrhb4em

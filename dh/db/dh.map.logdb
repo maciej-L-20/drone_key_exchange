@@ -1,5 +1,1 @@
 v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,modularPowering:modularPowering_inst_drone2|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,modularPowering:modularPowering_inst_drone1|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,modularPowering:modularPowering_inst_drone2|lpm_mult:Mult1|mult_aat:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,modularPowering:modularPowering_inst_drone1|lpm_mult:Mult1|mult_aat:auto_generated|mac_out2,

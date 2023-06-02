@@ -1,6 +1,8 @@
 module drone
 #(parameter N = 8,
-parameter P = 137)
+parameter Prime = 137,
+parameter Generator = 5,
+parameter ID = 1)
 (
 input [N-1:0] mess_input,
 input received,
@@ -10,13 +12,14 @@ input  			  	 clk,
 input  			  	 ena,
 output [2*N-1:0] mess_out,
 output mess_rdy,
+output reg wait_for_cc,
 output [N-1:0] key,
 output key_rdy
 );
-reg [N-1:0] G = 8'b0000101;
+reg [N-1:0] G = Generator;
 wire[N-1:0] privateKey_stream;
 reg[N-1:0] privateKey_reg;
-reg [N-1:0] id= 8'b00000001;
+reg [N-1:0] id= ID;
 wire rdy_modPower;
 wire [N-1:0] res_modPower;
 reg [N-1:0] modPower_base;
@@ -50,12 +53,14 @@ reg [size-1:0] state_reg,state_next;
 				state_next = send_mess;
 				privateKey_reg = privateKey_stream;
 				modPower_base = G;
+				wait_for_cc = 1'b1;
 			end
 			else		  state_next = idle;
 			
 			send_mess: 
 			if(received)
 				begin
+					wait_for_cc = 1'b0;
 					modPower_base = mess_input;
 					state_next = compute_key;
 				end
@@ -77,7 +82,7 @@ reg [size-1:0] state_reg,state_next;
 	assign key = (rdy_modPower & state_reg == compute_key) ? res_modPower:8'b0;
 	assign key_rdy = (rdy_modPower & state_reg == compute_key) ? 1'b1:1'b0;
 
-modularPowering #(N,P) modularPowering_inst(
+modularPowering #(N,Prime) modularPowering_inst(
 .rst(rst),
 .clk(clk),
 .ena(ena),

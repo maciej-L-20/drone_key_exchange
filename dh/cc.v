@@ -1,7 +1,9 @@
 module cc
 #(parameter N = 8,
 parameter drone1_prime = 137,
-parameter drone2_prime = 229)
+parameter drone1_generator = 5,
+parameter drone2_prime = 229,
+parameter drone2_generator = 2)
 (
 input drone_rdy, // wiadomość od drona, że pora odebrać 1. część klucza
 input [2*N-1:0] mess_input, // wiadomość wysyłana od drona
@@ -91,19 +93,14 @@ reg [size-1:0] state_reg,state_next;
 	always@(*) begin
 	case(id)
 	drone1: begin
-	G = 8'b0000101;
-	if(start) begin
+	G = drone1_generator;
 	modPower_base1 = modPower_base;
 	start1 = start;
 	end
-	end
-
 	drone2: begin
-	G = 8'b0000010;
-	if(start) begin
+	G = drone2_generator;
 	modPower_base2 = modPower_base;
 	start2 = start;
-	end
 	end
 	endcase
 	end
@@ -149,4 +146,4 @@ random_generator randomGenerator_inst(
 .stream(privateKey_stream)
 );
 
-	endmodule
+endmodule

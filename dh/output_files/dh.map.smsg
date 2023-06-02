@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at drone.v(46): always construct contains both blocking and non-blocking assignments File: C:/Users/kacpe/FPGA/sycy_23l_projekt/dh/drone.v Line: 46
+Warning (10268): Verilog HDL information at drone.v(49): always construct contains both blocking and non-blocking assignments File: F:/SYCY/sycy_23l_projekt/dh/drone.v Line: 49
+Info (10281): Verilog HDL Declaration information at drone.v(5): object "ID" differs only in case from object "id" in the same scope File: F:/SYCY/sycy_23l_projekt/dh/drone.v Line: 5
