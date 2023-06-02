@@ -4,35 +4,79 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "res[0]",
+					"name" : "mess_out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "res[1]",
+					"name" : "mess_out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "res[2]",
+					"name" : "mess_out[2]",
 					"strict" : false
 				},
 				{
-					"name" : "res[3]",
+					"name" : "mess_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "res[4]",
+					"name" : "mess_out[4]",
 					"strict" : false
 				},
 				{
-					"name" : "res[5]",
+					"name" : "mess_out[5]",
 					"strict" : false
 				},
 				{
-					"name" : "res[6]",
+					"name" : "mess_out[6]",
 					"strict" : false
 				},
 				{
-					"name" : "rdy",
+					"name" : "mess_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mess_rdy",
+					"strict" : false
+				},
+				{
+					"name" : "key[0]",
+					"strict" : false
+				},
+				{
+					"name" : "key[1]",
+					"strict" : false
+				},
+				{
+					"name" : "key[2]",
+					"strict" : false
+				},
+				{
+					"name" : "key[3]",
+					"strict" : false
+				},
+				{
+					"name" : "key[4]",
+					"strict" : false
+				},
+				{
+					"name" : "key[5]",
+					"strict" : false
+				},
+				{
+					"name" : "key[6]",
+					"strict" : false
+				},
+				{
+					"name" : "key[7]",
+					"strict" : false
+				},
+				{
+					"name" : "key_rdy",
+					"strict" : false
+				},
+				{
+					"name" : "drone_rdy",
 					"strict" : false
 				},
 				{
@@ -48,71 +92,67 @@
 					"strict" : false
 				},
 				{
-					"name" : "start",
+					"name" : "mess_input[10]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[0]",
+					"name" : "mess_input[11]",
 					"strict" : false
 				},
 				{
-					"name" : "base[6]",
+					"name" : "mess_input[12]",
 					"strict" : false
 				},
 				{
-					"name" : "base[7]",
+					"name" : "mess_input[13]",
 					"strict" : false
 				},
 				{
-					"name" : "base[5]",
+					"name" : "mess_input[14]",
 					"strict" : false
 				},
 				{
-					"name" : "base[4]",
+					"name" : "mess_input[15]",
 					"strict" : false
 				},
 				{
-					"name" : "base[3]",
+					"name" : "mess_input[8]",
 					"strict" : false
 				},
 				{
-					"name" : "base[2]",
+					"name" : "mess_input[9]",
 					"strict" : false
 				},
 				{
-					"name" : "base[1]",
+					"name" : "mess_input[7]",
 					"strict" : false
 				},
 				{
-					"name" : "base[0]",
+					"name" : "mess_input[6]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[7]",
+					"name" : "mess_input[5]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[6]",
+					"name" : "mess_input[4]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[5]",
+					"name" : "mess_input[3]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[4]",
+					"name" : "mess_input[2]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[3]",
+					"name" : "mess_input[1]",
 					"strict" : false
 				},
 				{
-					"name" : "exp[2]",
-					"strict" : false
-				},
-				{
-					"name" : "exp[1]",
+					"name" : "mess_input[0]",
 					"strict" : false
 				}
 			]
